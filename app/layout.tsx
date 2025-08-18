@@ -1,17 +1,23 @@
 import '@/styles/globals.css'
 
-import type { Metadata } from 'next'
-import { Geist } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
+
+import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/providers/theme-provider'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const inter = Inter({
   subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
 })
 
 export const metadata: Metadata = {
-  title: 'halo',
-  description: 'the next annoying social media app',
+  title: 'Your App Name',
+  description: 'Your app description',
+}
+
+export const viewport: Viewport = {
+  colorScheme: 'light',
 }
 
 export default function RootLayout({
@@ -21,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${geistSans.variable} antialiased`}>
+      <body className={`${inter.variable} antialiased`}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
