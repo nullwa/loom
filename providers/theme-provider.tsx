@@ -6,14 +6,14 @@ import { createContext, useContext, useEffect, useState } from 'react'
 import type { Theme, ThemeModeProvider } from '@/providers/stores/theme-provider.store'
 
 /**
- * ThemeProviderProps
+ * ThemeProvider
  *
  * Provides theme state and functions to the React tree.
  * Attaches a CSS class (`light-mode` or `dark-mode`) to the <html> element
  * and persists the user’s choice in `localStorage`.
  */
-export const ThemeProviderProps: FC<PropsWithChildren> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>('light-mode')
+export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
+  const [theme, setTheme] = useState<Theme | null>(null)
 
   useEffect(() => {
     const saved = localStorage.getItem('theme') as Theme | null
@@ -38,6 +38,8 @@ export const ThemeProviderProps: FC<PropsWithChildren> = ({ children }) => {
     setTheme(mode)
     localStorage.setItem('theme', mode)
   }
+
+  if (!theme) return null
 
   return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>
 }
