@@ -5,7 +5,7 @@ import { type FC, type ReactNode } from 'react'
 import { cx } from '@/helpers/cx'
 import Link from 'next/link'
 
-type ComponentProps = {
+interface ComponentProps {
   children: ReactNode
   layout?: boolean
 }
