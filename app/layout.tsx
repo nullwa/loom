@@ -3,6 +3,8 @@ import '@/styles/globals.css'
 import type { Metadata, Viewport } from 'next'
 
 import { Inter } from 'next/font/google'
+
+import { Dashboard } from '@/ui/bloc/dashboard'
 import { ThemeProvider } from '@/providers/theme-provider'
 
 const inter = Inter({
@@ -12,8 +14,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Your App Name',
-  description: 'Your app description',
+  title: 'Prizm',
+  description: 'A modern, responsive, and customizable templating ui library built with Next.js and Tailwind CSS. from @nullwa',
 }
 
 export const viewport: Viewport = {
@@ -28,7 +30,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${inter.variable} antialiased`}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <Dashboard>{children}</Dashboard>
+        </ThemeProvider>
       </body>
     </html>
   )
