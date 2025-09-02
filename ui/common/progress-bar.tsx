@@ -1,8 +1,10 @@
 'use client'
 
+import type { FC } from 'react'
+
 import { cx } from '@/helpers/cx'
 
-interface ProgressBarProps {
+interface ComponentProps {
   value: number
   min?: number
   max?: number
@@ -14,7 +16,7 @@ interface ProgressBarProps {
 /**
  * A basic progress bar component.
  */
-export const ProgressBarBase = ({ value, min = 0, max = 100, className, progressClassName }: ProgressBarProps) => {
+export const ProgressBarBase: FC<ComponentProps> = ({ value, min = 0, max = 100, className, progressClassName }) => {
   const percentage = ((value - min) * 100) / (max - min)
 
   return (
@@ -35,7 +37,7 @@ export const ProgressBarBase = ({ value, min = 0, max = 100, className, progress
 
 type ProgressBarLabelPosition = 'right' | 'bottom' | 'top-floating' | 'bottom-floating'
 
-export interface ProgressIndicatorWithTextProps extends ProgressBarProps {
+interface ProgressIndicatorWithTextProps extends ComponentProps {
   /**
    * Specifies the layout of the text relative to the progress bar.
    * - `right`: Text is displayed to the right of the progress bar.
@@ -49,7 +51,7 @@ export interface ProgressIndicatorWithTextProps extends ProgressBarProps {
 /**
  * A progress bar component that displays the value text in various configurable layouts.
  */
-export const ProgressBar = ({ value, min = 0, max = 100, valueFormatter, labelPosition, className, progressClassName }: ProgressIndicatorWithTextProps) => {
+export const ProgressBar: FC<ProgressIndicatorWithTextProps> = ({ value, min = 0, max = 100, valueFormatter, labelPosition, className, progressClassName }) => {
   const percentage = ((value - min) * 100) / (max - min)
   const formattedValue = valueFormatter ? valueFormatter(value, percentage) : `${percentage.toFixed(0)}%` // Default to rounded percentage
 
