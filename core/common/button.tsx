@@ -124,7 +124,7 @@ interface ComponentProps extends DetailedHTMLProps<Omit<ButtonHTMLAttributes<HTM
   iconLeading: FC<{ className?: string }> | ReactNode
 }
 
-export const Button: FC<Partial<ComponentProps>> = ({
+const Button: FC<Partial<ComponentProps>> = ({
   size = 'sm',
   color = 'primary',
   children,
@@ -219,3 +219,6 @@ export const Button: FC<Partial<ComponentProps>> = ({
     </Component>
   )
 }
+
+Button.displayName = 'Button'
+export { Button }

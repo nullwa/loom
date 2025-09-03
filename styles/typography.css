@@ -216,8 +216,7 @@
   /* Inline elements */
   &:where(a:not(h1 a, h2 a, h3 a, h4 a, h5 a, h6 a)) {
     font-weight: 400;
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    text-decoration: none;
   }
 
   &:where(a:focus-visible) {
@@ -398,8 +397,7 @@
     /* Inline elements */
     &:where(a:not(h1 a, h2 a, h3 a, h4 a, h5 a, h6 a)) {
       font-weight: 400;
-      text-decoration: underline;
-      text-underline-offset: 3px;
+      text-decoration: none;
     }
     &:where(:is(h1, h2, h3) a) {
       color: var(--tw-prose-headings);

@@ -16,7 +16,7 @@ interface ComponentProps {
 /**
  * A basic progress bar component.
  */
-export const ProgressBarBase: FC<ComponentProps> = ({ value, min = 0, max = 100, className, progressClassName }) => {
+const ProgressBarBase: FC<ComponentProps> = ({ value, min = 0, max = 100, className, progressClassName }) => {
   const percentage = ((value - min) * 100) / (max - min)
 
   return (
@@ -51,7 +51,7 @@ interface ProgressIndicatorWithTextProps extends ComponentProps {
 /**
  * A progress bar component that displays the value text in various configurable layouts.
  */
-export const ProgressBar: FC<ProgressIndicatorWithTextProps> = ({ value, min = 0, max = 100, valueFormatter, labelPosition, className, progressClassName }) => {
+const ProgressBar: FC<ProgressIndicatorWithTextProps> = ({ value, min = 0, max = 100, valueFormatter, labelPosition, className, progressClassName }) => {
   const percentage = ((value - min) * 100) / (max - min)
   const formattedValue = valueFormatter ? valueFormatter(value, percentage) : `${percentage.toFixed(0)}%` // Default to rounded percentage
 
@@ -99,3 +99,7 @@ export const ProgressBar: FC<ProgressIndicatorWithTextProps> = ({ value, min = 0
       return baseProgressBar
   }
 }
+
+ProgressBar.displayName = 'ProgressBar'
+ProgressBarBase.displayName = 'ProgressBarBase'
+export { ProgressBar, ProgressBarBase }

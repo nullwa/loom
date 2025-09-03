@@ -25,7 +25,7 @@ interface ComponentProps extends AriaSliderProps {
   labelFormatter: (value: number) => string
 }
 
-export const Slider: FC<Partial<ComponentProps>> = ({ labelPosition = 'default', minValue = 0, maxValue = 100, labelFormatter, formatOptions, ...rest }) => {
+const Slider: FC<Partial<ComponentProps>> = ({ labelPosition = 'default', minValue = 0, maxValue = 100, labelFormatter, formatOptions, ...rest }) => {
   const defaultFormatOptions: Intl.NumberFormatOptions = {
     style: 'percent',
     maximumFractionDigits: 0,
@@ -74,3 +74,6 @@ export const Slider: FC<Partial<ComponentProps>> = ({ labelPosition = 'default',
     </AriaSlider>
   )
 }
+
+Slider.displayName = 'Slider'
+export { Slider }

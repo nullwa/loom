@@ -2,17 +2,24 @@
 
 import Link from 'next/link'
 import type { FC } from 'react'
+import { usePathname } from 'next/navigation'
 
 import { Constants } from '@/core/constants'
 import { ThemeSwitcher } from '@/core/shared/theme-switcher'
+import { Breadcrumb } from '@/core/common/breadcrumb'
+import { getBreadcrumbItems } from '@/helpers/array-of-paths'
 
 interface ComponentProps {
   children: React.ReactNode
 }
 
 export const Dashboard: FC<ComponentProps> = ({ children }) => {
+  const pathname = usePathname()
+
+  console.log(pathname.split('/'))
+
   return (
-    <main className='grid grid-cols-8'>
+    <main className='grid grid-cols-8 min-h-screen'>
       <aside className='col-span-1 border-r border-r-secondary'>
         <header className='sticky top-0 bg-primary border-b border-b-secondary z-10 h-16 px-4 flex items-center'>{Constants.APP_NAME}</header>
         <section className='sticky top-16 flex flex-col gap-2 p-2'>
@@ -25,7 +32,7 @@ export const Dashboard: FC<ComponentProps> = ({ children }) => {
       </aside>
       <article className='col-span-7'>
         <header className='sticky top-0 bg-primary z-10 h-16 px-4 flex flex-row justify-between items-center border-b border-b-secondary'>
-          <p>test</p>
+          <Breadcrumb items={getBreadcrumbItems(pathname)} />
           <ThemeSwitcher />
         </header>
         <section className='flex-1'>{children}</section>
