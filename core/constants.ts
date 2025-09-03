@@ -1,3 +1,3 @@
 export const Constants: Constants = {
-  APP_NAME: 'Prizm',
+  APP_NAME: 'HALO',
 }

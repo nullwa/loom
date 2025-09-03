@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import type { JSX } from 'react'
 
-import { Constants } from '@/core/constants'
 import { useTheme } from '@/providers/theme-provider'
 
 export default function Home(): JSX.Element {
@@ -11,10 +10,10 @@ export default function Home(): JSX.Element {
   return (
     <main className='w-full max-w-4/5 flex flex-col p-4 mx-auto space-y-6'>
       {/* Header for base components */}
-      <h4 className='mt-0'>{Constants.APP_NAME} Base components</h4>
+      <h4 className='mt-0'>Base components</h4>
       <p className='w-full max-w-3xl'>
-        {Constants.APP_NAME} React is the world’s largest collection of open-source React components built with Tailwind CSS and React Aria. Everything you need
-        to design and develop modern, beautiful interfaces and websites—fast. Just copy, paste, and build.
+        A React is the world’s largest collection of open-source React components built with Tailwind CSS and React Aria. Everything you need to design and
+        develop modern, beautiful interfaces and websites—fast. Just copy, paste, and build.
       </p>
       {/* list of base components */}
       <section className='w-full grid grid-cols-5 gap-4'>

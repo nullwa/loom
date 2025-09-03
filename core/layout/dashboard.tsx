@@ -4,6 +4,7 @@ import Link from 'next/link'
 import type { FC } from 'react'
 
 import { Constants } from '@/core/constants'
+import { ThemeSwitcher } from '@/core/shared/theme-switcher'
 
 interface ComponentProps {
   children: React.ReactNode
@@ -23,7 +24,10 @@ export const Dashboard: FC<ComponentProps> = ({ children }) => {
         </section>
       </aside>
       <article className='col-span-7'>
-        <header className='sticky top-0 bg-primary z-10 h-16 px-4 flex items-center border-b border-b-secondary'></header>
+        <header className='sticky top-0 bg-primary z-10 h-16 px-4 flex flex-row justify-between items-center border-b border-b-secondary'>
+          <p>test</p>
+          <ThemeSwitcher />
+        </header>
         <section className='flex-1'>{children}</section>
       </article>
     </main>

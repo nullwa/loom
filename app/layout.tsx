@@ -1,10 +1,10 @@
 import '@/styles/globals.css'
 
-import type { Metadata, Viewport } from 'next'
+import type { Metadata } from 'next'
 
 import { Inter } from 'next/font/google'
 
-import { Dashboard } from '@/core/shared/dashboard'
+import { Dashboard } from '@/core/layout/dashboard'
 import { ThemeProvider } from '@/providers/theme-provider'
 
 const inter = Inter({
@@ -16,10 +16,6 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'Prizm',
   description: 'A modern, responsive, and customizable templating ui library built with Next.js and Tailwind CSS. from @nullwa',
-}
-
-export const viewport: Viewport = {
-  colorScheme: 'light',
 }
 
 export default function RootLayout({
