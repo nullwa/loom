@@ -10,10 +10,10 @@ interface ComponentProps {
 
 export const Dashboard: FC<ComponentProps> = ({ children }) => {
   return (
-    <main className='h-screen min-h-screen w-full flex flex-row'>
-      <aside className='h-full w-64 border-r border-r-secondary'>
-        <header className='h-16 px-4 flex items-center'>{Constants.APP_NAME}</header>
-        <section className='flex flex-col gap-2 p-2'>
+    <main className='grid grid-cols-8'>
+      <aside className='col-span-1 border-r border-r-secondary'>
+        <header className='sticky top-0 bg-primary border-b border-b-secondary z-10 h-16 px-4 flex items-center'>{Constants.APP_NAME}</header>
+        <section className='sticky top-16 flex flex-col gap-2 p-2'>
           {NAV_ITEMS.map((nav) => (
             <Link key={nav.path} href={nav.path}>
               {nav.title}
@@ -21,9 +21,9 @@ export const Dashboard: FC<ComponentProps> = ({ children }) => {
           ))}
         </section>
       </aside>
-      <article className='h-full flex-1 flex flex-col'>
-        <header className='h-16 px-4 flex items-center border-b border-b-secondary'></header>
-        <section className='flex-1 overflow-y-auto'>{children}</section>
+      <article className='col-span-7'>
+        <header className='sticky top-0 bg-primary z-10 h-16 px-4 flex items-center border-b border-b-secondary'></header>
+        <section className='flex-1'>{children}</section>
       </article>
     </main>
   )
