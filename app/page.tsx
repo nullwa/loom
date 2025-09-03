@@ -1,6 +1,8 @@
 'use client'
 
+import Image from 'next/image'
 import type { JSX } from 'react'
+
 import { Constants } from '@/core/constants'
 import { useTheme } from '@/providers/theme-provider'
 
@@ -17,11 +19,18 @@ export default function Home(): JSX.Element {
       {/* list of base components */}
       <section className='w-full grid grid-cols-5 gap-4 pb-4'>
         {COMPONENT_ITEMS.map((elem, index) => (
-          <div key={index} className='bg-primary border border-secondary rounded-lg items-center justify-center h-42 px-1 py-1.25'>
-            <div
-              className={`w-full h-3/4 bg-secondary border border-secondary rounded-sm bg-cover bg-center bg-no-repeat cursor-pointer`}
-              style={{ backgroundImage: elem.image && `url(${theme === 'dark-mode' ? elem.image.replace('.webp', '-1.webp') : elem.image})` }}
-            />
+          <div key={index} className='bg-primary border border-secondary rounded-lg items-center justify-center h-42 px-1 py-1.25 cursor-pointer'>
+            <div className='relative w-full h-3/4 border bg-red-100 border-secondary overflow-hidden rounded-md'>
+              {elem.image && (
+                <Image
+                  fill
+                  alt={elem.title || 'preview'}
+                  src={theme === 'dark-mode' ? elem.image.replace('.webp', '-1.webp') : elem.image}
+                  className='object-cover object-center transition-transform duration-300 hover:scale-110'
+                  style={{ margin: '0px 0px', borderRadius: '0px' }}
+                />
+              )}
+            </div>
             <div className='p-1 capitalize'>{elem.title}</div>
           </div>
         ))}
