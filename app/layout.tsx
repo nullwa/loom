@@ -4,8 +4,8 @@ import type { Metadata, Viewport } from 'next'
 
 import { Inter } from 'next/font/google'
 
-import { Dashboard } from '@/ui/bloc/dashboard'
 import { ThemeProvider } from '@/providers/theme-provider'
+import { Dashboard } from '@/ui/bloc/dashboard'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -29,9 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${inter.variable} antialiased prose`}>
         <ThemeProvider>
-          <Dashboard>{children}</Dashboard>
+          <Dashboard layout>{children}</Dashboard>
         </ThemeProvider>
       </body>
     </html>
