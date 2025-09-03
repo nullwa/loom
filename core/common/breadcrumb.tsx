@@ -9,7 +9,7 @@ import { Breadcrumbs as AriaBreadcrumbs, Breadcrumb as AriaBreadcrumb, Link as A
 const styles = sortCx({
   common: {
     root: 'flex flex-wrap items-center',
-    item: 'flex items-center gap-1.5 transition-colors duration-200 ease-out',
+    item: 'flex items-center gap-2 transition-colors duration-200 ease-out',
     link: 'hover:text-primary',
     current: 'text-primary font-medium',
     separator: 'flex items-center select-none text-muted',
