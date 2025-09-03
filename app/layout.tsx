@@ -4,8 +4,8 @@ import type { Metadata, Viewport } from 'next'
 
 import { Inter } from 'next/font/google'
 
+import { Dashboard } from '@/core/shared/dashboard'
 import { ThemeProvider } from '@/providers/theme-provider'
-import { Dashboard } from '@/ui/bloc/dashboard'
 
 const inter = Inter({
   subsets: ['latin'],

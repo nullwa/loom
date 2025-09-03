@@ -1,8 +1,9 @@
 'use client'
 
-import { Constants } from '@/core/constants'
 import Link from 'next/link'
 import type { FC } from 'react'
+
+import { Constants } from '@/core/constants'
 
 interface ComponentProps {
   children: React.ReactNode
