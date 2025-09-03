@@ -55,7 +55,7 @@ const Breadcrumb: FC<BreadcrumbProps> = ({
 
         return (
           <AriaBreadcrumb key={idx} className={styles.common.item}>
-            {items[0].href === item.href ? <Home size={16} className='text-secondary' /> : null}
+            {items[0].href === item.href ? <Home size={15} className='text-secondary' /> : null}
             {item.href && !isLast ? (
               <AriaLink href={item.href} className={cx(styles.common.link, styles.colors[color].link)}>
                 {item.label}
