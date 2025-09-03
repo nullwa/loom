@@ -29,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${inter.variable} antialiased prose`}>
+      <body className={`${inter.variable} antialiased prose h-screen min-h-screen bg-primary overflow-hidden`}>
         <ThemeProvider>
           <Dashboard>{children}</Dashboard>
         </ThemeProvider>

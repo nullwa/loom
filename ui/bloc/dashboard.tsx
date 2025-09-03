@@ -1,32 +1,36 @@
 'use client'
 
+import { Constants } from '@/core/constants'
 import Link from 'next/link'
-import { type FC, type ReactNode } from 'react'
-
-import { cx } from '@/helpers/cx'
-import { CONSTANTS } from '@/core/constants'
+import type { FC } from 'react'
 
 interface ComponentProps {
-  children: ReactNode
-  layout?: boolean
+  children: React.ReactNode
 }
 
-export const Dashboard: FC<ComponentProps> = ({ children, layout = false }) => {
+export const Dashboard: FC<ComponentProps> = ({ children }) => {
   return (
-    <main className='h-screen w-full min-h-screen flex flex-col'>
-      <header className='h-16 px-4 flex items-center border-b border-b-secondary'>header</header>
-
-      <article className={cx('flex-1 h-full flex', layout ? 'flex-col' : 'flex-row')}>
-        <aside className={cx('flex gap-3 p-4  border-r border-r-secondary', layout ? 'w-full' : 'h-full w-xs', layout ? 'flex-row' : 'flex-col')}>
-          {CONSTANTS.VerticalNavigation.map((nav) => (
+    <main className='h-screen min-h-screen w-full flex flex-row'>
+      <aside className='h-full w-64 border-r border-r-secondary'>
+        <header className='h-16 px-4 flex items-center'>{Constants.APP_NAME}</header>
+        <section className='flex flex-col gap-2 p-2'>
+          {NAV_ITEMS.map((nav) => (
             <Link key={nav.path} href={nav.path}>
               {nav.title}
             </Link>
           ))}
-        </aside>
-
-        <section className={cx('h-full flex-1')}>{children}</section>
+        </section>
+      </aside>
+      <article className='h-full flex-1 flex flex-col'>
+        <header className='h-16 px-4 flex items-center border-b border-b-secondary'></header>
+        <section className='flex-1 overflow-y-auto'>{children}</section>
       </article>
     </main>
   )
 }
+
+const NAV_ITEMS: Navigation[] = [
+  { title: 'Home', path: '/' },
+  { title: 'Documentation', path: '/documentation' },
+  { title: 'Base UI', path: '/base-ui' },
+]

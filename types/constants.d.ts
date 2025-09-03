@@ -1,3 +1,3 @@
 type Constants = {
-  VerticalNavigation: Navigation[]
+  APP_NAME: string
 }
