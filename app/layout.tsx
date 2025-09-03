@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${inter.variable} antialiased prose`}>
         <ThemeProvider>
-          <Dashboard layout>{children}</Dashboard>
+          <Dashboard>{children}</Dashboard>
         </ThemeProvider>
       </body>
     </html>
