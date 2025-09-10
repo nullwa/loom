@@ -1,11 +1,13 @@
-import { Meta } from '@storybook/addon-docs/blocks'
-import Image from 'next/image'
+import { Meta, Story } from '@storybook/addon-docs/blocks'
+import * as ButtonStories from './button.story'
 
 <Meta title='Configure your project' />
 
-<div className='bg-sebii-blue'>
+<div>
   <div className='sb-section-title'>
     # Configure your project Because Storybook works separately from your app, you'll need to configure it for your specific stack and setup. Below, explore
     guides for configuring Storybook with popular frameworks and tools. If you get stuck, learn how you can ask for help from our community.
   </div>
 </div>
+
+<Story of={ButtonStories.Primary} />
