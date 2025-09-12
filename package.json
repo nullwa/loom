@@ -1,32 +1,33 @@
 {
-  "name": "halo",
+  "name": "prizm",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "next build --turbopack",
+    "story": "storybook dev -p 0008",
+    "lint": "eslint"
   },
   "dependencies": {
-    "next": "15.4.6",
+    "next": "15.5.2",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@storybook/addon-docs": "^9.1.5",
+    "@storybook/nextjs": "^9.1.5",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "class-variance-authority": "^0.7.1",
     "eslint": "^9",
-    "eslint-config-next": "15.4.6",
-    "lucide-react": "^0.542.0",
-    "react-aria-components": "^1.11.0",
+    "eslint-config-next": "15.5.2",
+    "lucide-react": "^0.543.0",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4",
     "tailwindcss-animate": "^1.0.7",
-    "tailwindcss-react-aria-components": "^2.0.0",
     "typescript": "^5"
   }
 }

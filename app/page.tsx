@@ -1,72 +1,103 @@
-'use client'
+import Image from "next/image";
 
-import Image from 'next/image'
-import type { JSX } from 'react'
-
-import { useTheme } from '@/providers/theme-provider'
-
-export default function Home(): JSX.Element {
-  const { theme } = useTheme()
+export default function Home() {
   return (
-    <main className='w-full max-w-4/5 flex flex-col p-4 mx-auto space-y-6'>
-      {/* Header for base components */}
-      <h4 className='mt-0'>Base components</h4>
-      <p className='w-full max-w-3xl'>
-        A React is the world’s largest collection of open-source React components built with Tailwind CSS and React Aria. Everything you need to design and
-        develop modern, beautiful interfaces and websites—fast. Just copy, paste, and build.
-      </p>
-      {/* list of base components */}
-      <section className='w-full grid grid-cols-5 gap-4'>
-        {COMPONENT_ITEMS.map((elem, index) => (
-          <div key={index} className='bg-primary border border-secondary rounded-lg items-center justify-center h-42 px-1 py-1.25 cursor-pointer'>
-            <div className='relative w-full h-3/4 border bg-secondary border-secondary overflow-hidden rounded-md'>
-              {elem.image && (
-                <Image
-                  fill
-                  loading='lazy'
-                  alt={elem.title || 'preview'}
-                  src={theme === 'dark-mode' ? elem.image.replace('.webp', '-1.webp') : elem.image}
-                  className='object-cover object-center transition-transform duration-300 hover:scale-110'
-                  style={{ margin: '0px 0px', borderRadius: '0px' }}
-                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                />
-              )}
-            </div>
-            <div className='p-1 capitalize'>{elem.title}</div>
-          </div>
-        ))}
-      </section>
-    </main>
-  )
-}
+    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+        <Image
+          className="dark:invert"
+          src="/next.svg"
+          alt="Next.js logo"
+          width={180}
+          height={38}
+          priority
+        />
+        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
+          <li className="mb-2 tracking-[-.01em]">
+            Get started by editing{" "}
+            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
+              app/page.tsx
+            </code>
+            .
+          </li>
+          <li className="tracking-[-.01em]">
+            Save and see your changes instantly.
+          </li>
+        </ol>
 
-const COMPONENT_ITEMS: Navigation[] = [
-  { title: 'featured icons', path: '/base-ui/featured-icons', image: '/assets/images/featured-icons.webp' },
-  { title: 'button', path: '/base-ui/button', image: '/assets/images/buttons.webp' },
-  { title: 'social buttons', path: '/base-ui/social-buttons', image: '/assets/images/social-buttons.webp' },
-  { title: 'mobile app store buttons', path: '/base-ui/mobile-app-store-buttons', image: '/assets/images/mobile-app-store-buttons.webp' },
-  { title: 'utility buttons', path: '/base-ui/utility-buttons', image: '/assets/images/utility-buttons.webp' },
-  { title: 'button groups', path: '/base-ui/button-groups', image: '/assets/images/button-groups.webp' },
-  { title: 'badges', path: '/base-ui/badges', image: '/assets/images/badges.webp' },
-  { title: 'badge groups', path: '/base-ui/badge-groups', image: '/assets/images/badge-groups.webp' },
-  { title: 'tags', path: '/base-ui/tags', image: '/assets/images/tags.webp' },
-  { title: 'dropdowns', path: '/base-ui/dropdowns', image: '/assets/images/dropdowns.webp' },
-  { title: 'select', path: '/base-ui/select', image: '/assets/images/select.webp' },
-  { title: 'input', path: '/base-ui/input', image: '/assets/images/inputs.webp' },
-  { title: 'textareas', path: '/base-ui/textareas', image: '/assets/images/textarea.webp' },
-  { title: 'verification code inputs', path: '/base-ui/verification-code-inputs', image: '/assets/images/verification-code-inputs.webp' },
-  { title: 'rich text editors', path: '/base-ui/rich-text-editors', image: '/assets/images/text-editors.webp' },
-  { title: 'toggle', path: '/base-ui/toggle', image: '/assets/images/toggles.webp' },
-  { title: 'checkbox', path: '/base-ui/checkbox', image: '/assets/images/checkboxes.webp' },
-  { title: 'radio buttons', path: '/base-ui/radio', image: '/assets/images/radio-buttons.webp' },
-  { title: 'radio groups', path: '/base-ui/radio-groups', image: '/assets/images/radio-groups.webp' },
-  { title: 'avatars', path: '/base-ui/avatars', image: '/assets/images/avatars.webp' },
-  { title: 'tooltips', path: '/base-ui/tooltips', image: '/assets/images/tooltips.webp' },
-  { title: 'progress indicators', path: '/base-ui/progress-indicators', image: '/assets/images/progress-indicators.webp' },
-  { title: 'slider', path: '/base-ui/slider', image: '/assets/images/sliders.webp' },
-  { title: 'video players', path: '/base-ui/video-players', image: '/assets/images/video-players.webp' },
-  { title: 'credit cards', path: '/base-ui/credit-cards', image: '/assets/images/credit-cards.webp' },
-  { title: 'qr codes', path: '/base-ui/qr-codes', image: '/assets/images/qr-code.webp' },
-  { title: 'illustrations', path: '/base-ui/illustrations', image: '/assets/images/illustrations.webp' },
-  { title: 'rating badge and stars', path: '/base-ui/rating-badge-and-stars', image: '/assets/images/rating-badge-and-stars.webp' },
-]
+        <div className="flex gap-4 items-center flex-col sm:flex-row">
+          <a
+            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              className="dark:invert"
+              src="/vercel.svg"
+              alt="Vercel logomark"
+              width={20}
+              height={20}
+            />
+            Deploy now
+          </a>
+          <a
+            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Read our docs
+          </a>
+        </div>
+      </main>
+      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/file.svg"
+            alt="File icon"
+            width={16}
+            height={16}
+          />
+          Learn
+        </a>
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/window.svg"
+            alt="Window icon"
+            width={16}
+            height={16}
+          />
+          Examples
+        </a>
+        <a
+          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Image
+            aria-hidden
+            src="/globe.svg"
+            alt="Globe icon"
+            width={16}
+            height={16}
+          />
+          Go to nextjs.org →
+        </a>
+      </footer>
+    </div>
+  );
+}
