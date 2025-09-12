@@ -9,7 +9,6 @@ const config: StorybookConfig = {
       nextConfigPath: '../next.config.js',
     },
   },
-  staticDirs: ['..\\public'],
 }
 
 export default config
