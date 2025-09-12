@@ -5,27 +5,22 @@ const Wrapper = (Story, context: StoryContext) => {
   const { theme } = context.globals
 
   useEffect(() => {
-    switch (theme) {
-      case 'dark-mode':
-        document.body.classList.add('dark-mode')
-      case 'light-mode':
-        document.body.classList.remove('dark-mode')
-      case 'both':
-        document.querySelector('#dark-preview')?.classList.add('dark-mode')
-    }
+    if (theme === 'dark-mode') document.body.classList.add('dark-mode')
+    if (theme === 'light-mode') document.body.classList.remove('dark-mode')
+    if (theme === 'both') document.querySelector('#dark-preview')?.classList.add('dark-mode')
   }, [theme])
 
   if (theme === 'both') {
     return (
-      <div className='grid grid-cols-2 prose min-h-52'>
+      <div className='grid grid-cols-1 prose'>
         <div
           id='light-preview'
-          className='flex items-center justify-center bg-primary border-2 border-r-0 border-gray-iron-200 dark:border-gray-700 rounded-s-lg'>
+          className='px-4 py-16 flex items-center justify-center bg-primary border-2 border-b-0 border-gray-iron-200 dark:border-gray-700 rounded-t-lg'>
           <Story />
         </div>
         <div
           id='dark-preview'
-          className='flex items-center justify-center bg-primary border-2 border-l-0 border-gray-iron-200 dark:border-gray-700 rounded-e-lg'>
+          className='px-4 py-16 flex items-center justify-center bg-primary border-2 border-t-0 border-gray-iron-200 dark:border-gray-700 rounded-b-lg'>
           <Story />
         </div>
       </div>
