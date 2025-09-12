@@ -19,6 +19,11 @@ const styles = cva(
           'disabled:bg-disabled disabled:shadow-xs disabled:ring-disabled_subtle',
         ].join(' '),
         secondary: [
+          'bg-gray-600 text-white shadow-xs-skeumorphic ring-1 ring-transparent ring-inset hover:bg-gray-800 data-loading:bg-gray-700',
+          'before:absolute before:inset-px before:border before:border-white/50 before:mask-b-from-0%',
+          'disabled:bg-disabled disabled:shadow-xs disabled:ring-disabled_subtle',
+        ].join(' '),
+        tertiary: [
           'bg-primary text-secondary shadow-xs-skeumorphic ring-1 ring-primary ring-inset hover:bg-primary_hover hover:text-secondary_hover data-loading:bg-primary_hover',
           'disabled:shadow-xs disabled:ring-disabled_subtle',
         ].join(' '),
@@ -32,6 +37,12 @@ const styles = cva(
           'before:absolute before:inset-px before:border before:border-white/50 before:mask-b-from-0%',
           'disabled:bg-disabled disabled:shadow-xs disabled:ring-disabled_subtle',
         ],
+        warning: [
+          'bg-warning-solid text-white shadow-xs-skeumorphic ring-1 ring-transparent ring-inset hover:bg-warning-800 data-loading:bg-warning-700',
+          'before:absolute before:inset-px before:border before:border-white/50 before:mask-b-from-0%',
+          'disabled:bg-disabled disabled:shadow-xs disabled:ring-disabled_subtle',
+        ].join(' '),
+        default: 'text-tertiary hover:bg-primary_hover hover:text-tertiary_hover data-loading:bg-primary_hover',
       },
       size: {
         sm: 'rounded-md h-8  min-w-8  px-2 text-sm font-semibold before:rounded-[5px]',
@@ -48,10 +59,10 @@ const styles = cva(
 )
 
 const sizeGapMap: Record<string, string> = {
-  sm: 'gap-1',
-  md: 'gap-1',
-  lg: 'gap-1.5',
-  xl: 'gap-2',
+  sm: 'gap-1.5',
+  md: 'gap-1.5',
+  lg: 'gap-2',
+  xl: 'gap-2.5',
 }
 
 type ComponentProps = ButtonHTMLAttributes<HTMLButtonElement> &
@@ -75,12 +86,13 @@ const Button: FC<ComponentProps> = ({
   const hasText = children && typeof children === 'string' && children.trim().length > 0
 
   return (
-    <button
-      data-slot='button'
-      data-loading={loading || undefined}
-      className={tm(styles({ variant, size, className }), !hasText && 'px-0', !loading && iconPosition === 'trailing' && 'flex-row-reverse')}
-      {...rest}>
-      <div className={tm('relative z-10 flex items-center justify-center', sizeGapMap[size ?? 'md'])}>
+    <button data-slot='button' data-loading={loading || undefined} className={tm(styles({ variant, size, className }), !hasText && 'px-0')} {...rest}>
+      <div
+        className={tm(
+          'relative z-10 flex items-center justify-center',
+          sizeGapMap[size ?? 'md'],
+          !loading && iconPosition === 'trailing' && 'flex-row-reverse'
+        )}>
         {!loading && isValidElement(Icon) && <span>{Icon}</span>}
         {loading && <Disc3 data-icon='loading' className='animate-spin size-5 opacity-85' />}
         {hasText && <span className='first-letter:uppercase'>{children}</span>}
@@ -89,6 +101,6 @@ const Button: FC<ComponentProps> = ({
   )
 }
 
-Button.displayName = 'BUTTON'
+Button.displayName = 'Button'
 
 export { Button }
