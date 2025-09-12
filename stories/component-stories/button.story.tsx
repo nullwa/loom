@@ -14,32 +14,25 @@ type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
   args: {
-    children: '',
+    children: 'test',
     icon: <Heart />,
-    loading: true,
-    size: 'sm',
+    variant: 'primary',
   },
 }
 
 export const Secondary: Story = {
   args: {
     children: 'test',
+    icon: <Heart />,
     variant: 'secondary',
-    // icon: <Heart className='size-5' />,
-    loading: false,
-    size: 'md',
-    disabled: false,
   },
 }
 
 export const Tertiary: Story = {
   args: {
     children: 'click me',
-    variant: 'secondary',
     icon: <Heart />,
-    loading: true,
-    size: 'lg',
-    iconPosition: 'trailing',
+    variant: 'error',
   },
 }
 
@@ -47,7 +40,6 @@ export const Fourth: Story = {
   args: {
     children: 'click me',
     icon: <Heart />,
-    loading: true,
-    size: 'xl',
+    variant: 'success',
   },
 }
