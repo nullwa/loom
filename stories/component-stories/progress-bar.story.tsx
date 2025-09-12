@@ -22,11 +22,19 @@ type Story = StoryObj<typeof meta>
 
 export const WithVariants: Story = {
   name: 'Variants',
-  args: { value: 45, bandColor: 'success' },
+  args: {
+    value: 45,
+    bandColor: "brand",
+    labelPosition: "right"
+  },
 }
 
 export const WithLabelRight: Story = {
-  args: { value: 45, labelPosition: 'right' },
+  args: {
+    value: 45,
+    labelPosition: 'right',
+    progressClassName: "bg-fg-brand-primary"
+  },
 }
 
 export const WithLabelBottom: Story = {

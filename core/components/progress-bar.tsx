@@ -28,7 +28,7 @@ const ProgressBarBase = ({ value, min = 0, max = 100, bandColor = 'brand', class
       <div
         // Use transform instead of width to avoid layout thrashing (and for smoother animation)
         style={{ transform: `translateX(-${100 - percentage}%)` }}
-        className={tm('size-full rounded-md transition duration-75 ease-linear', `bg-fg-${bandColor}-primary`, progressClassName)}
+        className={tm('h-full w-full rounded-md transition duration-75 ease-linear', `bg-fg-${bandColor}-primary`, progressClassName)}
       />
     </div>
   )
