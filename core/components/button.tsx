@@ -7,7 +7,7 @@ import { Disc3 } from 'lucide-react'
 
 const styles = cva(
   [
-    'group relative inset-ring-utility-green-50 h-max cursor-pointer outline-brand transition duration-100 ease-linear focus-visible:outline-2 focus-visible:outline-offset-2',
+    'contain-content group relative inset-ring-utility-green-50 h-max cursor-pointer outline-brand transition duration-100 ease-linear focus-visible:outline-2 focus-visible:outline-offset-2',
     'disabled:cursor-not-allowed disabled:text-fg-disabled',
   ].join(' '),
   {
@@ -23,12 +23,12 @@ const styles = cva(
           'disabled:shadow-xs disabled:ring-disabled_subtle',
         ].join(' '),
         error: [
-          'bg-error-solid text-white shadow-xs-skeumorphic ring-1 ring-transparent ring-inset outline-error hover:bg-error-solid/90',
+          'bg-error-solid text-white shadow-xs-skeumorphic ring-1 ring-transparent ring-inset hover:bg-error-800 data-loading:bg-error-700',
           'before:absolute before:inset-px before:border before:border-white/50 before:mask-b-from-0%',
           'disabled:bg-disabled disabled:shadow-xs disabled:ring-disabled_subtle',
         ].join(' '),
         success: [
-          'bg-success-solid text-white shadow-xs-skeumorphic ring-1 ring-transparent ring-inset outline-success-500 hover:bg-success-25',
+          'bg-success-solid text-white shadow-xs-skeumorphic ring-1 ring-transparent ring-inset hover:bg-success-800 data-loading:bg-success-700',
           'before:absolute before:inset-px before:border before:border-white/50 before:mask-b-from-0%',
           'disabled:bg-disabled disabled:shadow-xs disabled:ring-disabled_subtle',
         ],
