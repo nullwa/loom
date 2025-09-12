@@ -11,6 +11,12 @@ export const parameters: Parameters = {
       date: /Date$/i,
     },
   },
+  options: {
+    storySort: {
+      method: 'alphabetical',
+      order: ['Introduction', ['Components', 'Utils', 'Helpers']],
+    },
+  },
 }
 
 export const decorators: Decorator[] = [Wrapper]
