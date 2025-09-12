@@ -15,6 +15,7 @@
   "tailwindCSS.includeLanguages": {
     "plaintext": "tailwindcss"
   },
+  "tailwindCSS.classFunctions": ["cva", "cx"],
   /*
    * Custom regex patterns for Tailwind CSS class names
    * This allows for better IntelliSense and autocompletion in Tailwind CSS files
