@@ -23,8 +23,9 @@ export const globalTypes = {
     toolbar: {
       icon: 'circlehollow',
       items: [
-        { value: 'light-mode', title: 'Light Theme', default: true },
+        { value: 'light-mode', title: 'Light Theme' },
         { value: 'dark-mode', title: 'Dark Theme' },
+        { value: 'both', title: 'Both Themes', default: true },
       ],
       showName: true,
       dynamicTitle: true,
