@@ -1,14 +1,45 @@
-<img src='public/Loom-ui-brand.png' className='w-sm mx-auto mb-5' />
+<div style="display:flex;align-items:center;justify-content:center;margin-bottom:32px;flex-direction:column;" >
+    <img src="public/loom-ui-blue.svg" alt="Loom UI Logo" width="80"/>
+</div>
 
-## Introduction
+# Loom
 
-Loom UI is a comprehensive open-source React library of React components built using TypeScript, and styled with Tailwind CSS, it provides everything you need to create modern, accessible interfaces.
-Simply copy, paste, and accelerate your development process and save valuable time with production-ready, pixel-perfect components.
+**Loom UI** is an open-source **React component library** built with **TypeScript** and **Tailwind CSS**.
+It gives you **ready-to-use, responsive, and accessible components** so you can build modern web apps **faster and smarter**.
 
-Start your next project with confidence — Loom offers a robust foundation for building beautiful, responsive web applications.
+Forget boilerplate code — **copy, paste, and go**.
 
-## How is this different from a library?
+## Key Features
 
-Unlike traditional component libraries that are installed as a dependency, Loom UI React gives you the source code.
+- ⚡ **Direct Integration**: Drop components directly into your project
+- 🛠 **Fully Customizable**: Adjust styles, behavior, and structure
+- 🎨 **Tailwind-Powered**: Responsive and theme-friendly design
+- ✅ **Accessible by Default**: Built with ARIA standards
+- 📦 **TypeScript Support**: Strong typing and IntelliSense out-of-the-box
+- 🏗 **Ready for Production**: Designed for real-world projects
 
-When you select a component, its code is added directly to your project. This means no package dependencies to manage and no vendor lock-in! You have full control to modify, extend, or adapt the components to your specific needs—because you own the code.
+## Getting Started
+
+1. **Clone the repo**:
+
+```bash
+git clone https://github.com/nullwa/loom.git
+```
+
+2. **Copy the component you need** into your project:
+
+```tsx
+import { Button } from '@/core/components/Button'
+
+function App() {
+  return <Button variant='primary'>Click Me</Button>
+}
+```
+
+3. **Customize** and integrate — it’s yours to control.
+
+## Ideal For
+
+- Developers who want **fast, maintainable UI**
+- Teams needing **scalable, reusable components**
+- Projects that value **accessibility, performance, and simplicity**

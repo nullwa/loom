@@ -7,7 +7,7 @@ addons.setConfig({
   theme: create({
     base: 'dark',
     brandTitle: 'Loom',
-    brandUrl: 'https://github.com/nullwa/prizm',
-    brandImage: 'https://i.postimg.cc/CLfx9nhW/Loom-ui.png',
+    brandUrl: 'https://github.com/nullwa/loom',
+    brandImage: '/loom-ui-full-white.svg',
   }),
 })
