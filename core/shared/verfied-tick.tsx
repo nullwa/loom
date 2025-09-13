@@ -25,6 +25,7 @@ const stlyes = cva('z-10', {
     },
   },
   defaultVariants: {
+    variant: 'brand',
     size: 'md',
   },
 })
