@@ -6,8 +6,8 @@ addons.setConfig({
   panelPosition: 'right',
   theme: create({
     base: 'dark',
-    brandTitle: 'Halo',
+    brandTitle: 'Loom',
     brandUrl: 'https://github.com/nullwa/prizm',
-    brandImage: 'https://i.postimg.cc/CLfx9nhW/halo-ui.png',
+    brandImage: 'https://i.postimg.cc/CLfx9nhW/Loom-ui.png',
   }),
 })
