@@ -1,6 +1,16 @@
 'use client'
 
+import { type FC } from 'react'
+
 import { tm } from '@/helpers/tailwind-merge'
+
+const bandMap: Record<string, string> = {
+  brand: 'bg-fg-brand-primary',
+  error: 'bg-fg-error-primary',
+  success: 'bg-fg-success-primary',
+  warning: 'bg-fg-warning-primary',
+  default: 'bg-gray-600',
+}
 
 type ProgressBarProps = {
   value: number
@@ -15,7 +25,7 @@ type ProgressBarProps = {
 /**
  * A basic progress bar component.
  */
-const ProgressBarBase = ({ value, min = 0, max = 100, bandColor = 'brand', className, progressClassName }: ProgressBarProps) => {
+const ProgressBarBase: FC<ProgressBarProps> = ({ value, min = 0, max = 100, bandColor = 'brand', className, progressClassName }) => {
   const percentage = ((value - min) * 100) / (max - min)
 
   return (
@@ -28,7 +38,7 @@ const ProgressBarBase = ({ value, min = 0, max = 100, bandColor = 'brand', class
       <div
         // Use transform instead of width to avoid layout thrashing (and for smoother animation)
         style={{ transform: `translateX(-${100 - percentage}%)` }}
-        className={tm('h-full w-full rounded-md transition duration-75 ease-linear', `bg-fg-${bandColor}-primary`, progressClassName)}
+        className={tm('h-full w-full rounded-md transition duration-75 ease-linear', bandMap[bandColor], progressClassName)}
       />
     </div>
   )
@@ -43,7 +53,7 @@ type ProgressIndicatorWithTextProps = ProgressBarProps & {
 /**
  * A progress bar component that displays the value text in various configurable layouts.
  */
-const ProgressBar = ({
+const ProgressBar: FC<ProgressIndicatorWithTextProps> = ({
   value,
   min = 0,
   max = 100,
@@ -52,7 +62,7 @@ const ProgressBar = ({
   bandColor = 'brand',
   className,
   progressClassName,
-}: ProgressIndicatorWithTextProps) => {
+}) => {
   const percentage = ((value - min) * 100) / (max - min)
   const formattedValue = valueFormatter ? valueFormatter(value, percentage) : `${percentage.toFixed(0)}%` // Default to rounded percentage
 
