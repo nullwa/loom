@@ -1,6 +1,6 @@
-<div style="display:flex;align-items:center;justify-content:center;margin-bottom:32px;flex-direction:column;" >
-    <img src="public/loom-ui-blue.svg" alt="Loom UI Logo" width="80"/>
-</div>
+<p align="center">
+  <img src="public/loom-ui-blue.svg" alt="Loom UI Logo" width="80" />
+</p>
 
 # Loom
 
