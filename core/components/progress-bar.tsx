@@ -113,4 +113,6 @@ const ProgressBar: FC<ProgressIndicatorWithTextProps> = ({
   }
 }
 
+ProgressBar.displayName = 'ProgressBar'
+
 export { ProgressBar }
