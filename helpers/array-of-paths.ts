@@ -1,11 +1,9 @@
 'use client'
 
-import { type ReactNode } from 'react'
-
 const getBreadcrumbItems = (
   pathname: string
 ): {
-  label: ReactNode
+  label: string
   href: string
 }[] => {
   const parts = pathname.split('/').filter(Boolean) // remove empty strings
