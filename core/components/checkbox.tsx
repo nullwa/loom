@@ -33,9 +33,9 @@ type ComponentProps = InputHTMLAttributes<HTMLInputElement> &
 const Checkbox: FC<ComponentProps> = ({ label, hint, bordered = false, variant = 'brand', disabled = false, className, ...rest }) => {
   return (
     <div className={tm('flex items-center select-none', bordered && 'border border-secondary rounded-lg bg-secondary')}>
-      <label htmlFor='checking-item' className={tm('flex items-start gap-3 cursor-pointer py-3 px-4', disabled && 'cursor-not-allowed')}>
+      <label htmlFor={`${label}-checking-item`} className={tm('flex items-start gap-3 cursor-pointer py-3 px-4', disabled && 'cursor-not-allowed')}>
         <div className={tm('relative flex items-center justify-center')}>
-          <input id='checking-item' type='checkbox' className={tm(styles({ variant, className }))} disabled={disabled} {...rest} />
+          <input id={`${label}-checking-item`} type='checkbox' className={tm(styles({ variant, className }))} disabled={disabled} {...rest} />
           <Check
             className={tm(
               'absolute opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none size-3.5',
