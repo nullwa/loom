@@ -1,5 +1,8 @@
 import { type Meta, type StoryObj } from '@storybook/react'
+
 import { Tooltip } from '@/core/components/tooltip'
+import { Button } from '@/core/components/button'
+
 import { HelpCircle } from 'lucide-react'
 
 const meta: Meta<typeof Tooltip> = {
@@ -25,6 +28,7 @@ It uses \`react-aria-components\` under the hood to provide accessibility and ke
       options: ['top', 'bottom', 'left', 'right', 'top start', 'top end', 'bottom start', 'bottom end'],
       description: 'Tooltip placement relative to trigger',
     },
+    children: { control: 'text', description: 'Element that triggers the tooltip on hover or focus' },
   },
 }
 
@@ -37,7 +41,11 @@ export const Default: Story = {
     description: 'This is a description for the tooltip.',
     arrow: false,
     delay: 300,
-    children: <span className='underline cursor-pointer'>Hover or focus me</span>,
+    children: (
+      <Button variant='primary' size='sm'>
+        Hover or focus me
+      </Button>
+    ),
   },
 }
 
