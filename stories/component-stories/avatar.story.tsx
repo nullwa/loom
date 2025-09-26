@@ -82,7 +82,7 @@ export const WithImage: Story = {
   name: 'Avatar with Image',
   args: {
     size: 'md',
-    src: 'https://via.placeholder.com/40',
+    src: 'https://instagram.ftun14-1.fna.fbcdn.net/v/t51.288…pVHj2OlptDDZiVN4MLRRvQ&oe=68DCC30B&_nc_sid=7d3ac5',
     alt: 'User Avatar',
   },
 }
