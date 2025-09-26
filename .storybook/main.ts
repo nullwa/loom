@@ -10,6 +10,10 @@ const config: StorybookConfig = {
     },
   },
   staticDirs: ['../public'],
+  managerHead: (head) => `
+    ${head}
+    <link rel="icon" type="image/x-icon" href="/loom-ui-blue.svg" />
+  `,
 }
 
 export default config
