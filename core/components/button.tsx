@@ -1,13 +1,13 @@
 'use client'
 
-import { type FC, type ReactNode, type ButtonHTMLAttributes, isValidElement } from 'react'
+import { type FC, type ButtonHTMLAttributes } from 'react'
 
 import { tm, cva, type VariantProps } from '@/helpers/tailwind-merge'
-import { Disc3 } from 'lucide-react'
+import { DynamicIcon, IconName } from 'lucide-react/dynamic'
 
 const styles = cva(
   [
-    'contain-content group relative inset-ring-utility-green-50 h-max cursor-pointer outline-brand transition duration-100 ease-linear focus-visible:outline-2 focus-visible:outline-offset-2',
+    'select-none contain-content group relative inset-ring-utility-green-50 h-max cursor-pointer outline-brand transition duration-100 ease-linear focus-visible:outline-2 focus-visible:outline-offset-2',
     'disabled:cursor-not-allowed disabled:text-fg-disabled',
   ].join(' '),
   {
@@ -65,17 +65,26 @@ const sizeGapMap: Record<string, string> = {
   xl: 'gap-2.5',
 }
 
+const iconSizeMap: Record<string, number> = {
+  sm: 14,
+  md: 14,
+  lg: 16,
+  xl: 16,
+}
+
 type ComponentProps = ButtonHTMLAttributes<HTMLButtonElement> &
   VariantProps<typeof styles> & {
     children?: string
-    icon?: ReactNode
+    icon?: IconName
+    iconsize?: number
     iconPosition?: 'trailing' | 'leading'
     loading?: boolean
   }
 
 const Button: FC<ComponentProps> = ({
   children,
-  icon: Icon = null,
+  icon = null,
+  iconsize = null,
   loading = false,
   iconPosition = 'leading',
   variant = 'primary',
@@ -93,8 +102,8 @@ const Button: FC<ComponentProps> = ({
           sizeGapMap[size ?? 'md'],
           !loading && iconPosition === 'trailing' && 'flex-row-reverse'
         )}>
-        {!loading && isValidElement(Icon) && <span>{Icon}</span>}
-        {loading && <Disc3 data-icon='loading' className='animate-spin size-5 opacity-85' />}
+        {!loading && icon && <DynamicIcon name={icon} size={iconsize ?? iconSizeMap[size ?? 'md']} />}
+        {loading && <DynamicIcon name='loader' data-icon='loading' size={iconsize ?? iconSizeMap[size ?? 'md']} className='animate-spin opacity-85' />}
         {hasText && <span className='first-letter:uppercase'>{children}</span>}
       </div>
     </button>

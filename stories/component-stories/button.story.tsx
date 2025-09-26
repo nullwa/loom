@@ -1,7 +1,6 @@
 import { type Meta, type StoryObj } from '@storybook/nextjs'
 
 import { Button } from '@/core/components/button'
-import { Box } from 'lucide-react'
 
 const meta = {
   title: 'components/Button',
@@ -28,7 +27,7 @@ export const WithVariants: Story = {
   render: () => (
     <div className='flex flex-wrap gap-4'>
       {variants.map((variant) => (
-        <Button key={variant} variant={variant} icon={<Box className='size-4' />}>
+        <Button key={variant} variant={variant} icon='box'>
           {variant}
         </Button>
       ))}
@@ -41,7 +40,7 @@ export const DisabledButtons: Story = {
   render: () => (
     <div className='flex flex-wrap gap-4'>
       {variants.map((variant) => (
-        <Button key={variant} variant={variant} icon={<Box className='size-4' />} disabled>
+        <Button key={variant} variant={variant} icon='box' disabled>
           {variant}
         </Button>
       ))}
@@ -54,7 +53,7 @@ export const LoadingWithVariants: Story = {
   render: () => (
     <div className='flex flex-wrap gap-4'>
       {variants.map((variant) => (
-        <Button key={variant} variant={variant} icon={<Box className='size-4' />} loading>
+        <Button key={variant} variant={variant} icon='box' loading>
           {variant}
         </Button>
       ))}
@@ -67,7 +66,7 @@ export const OnlyIcons: Story = {
   render: () => (
     <div className='flex flex-wrap gap-4'>
       {variants.map((variant) => (
-        <Button key={variant} variant={variant} icon={<Box className='size-4' />} />
+        <Button key={variant} variant={variant} icon='box' iconsize={16} />
       ))}
     </div>
   ),
@@ -78,7 +77,7 @@ export const LoadingOnlyIcons: Story = {
   render: () => (
     <div className='flex flex-wrap gap-4'>
       {variants.map((variant) => (
-        <Button key={variant} variant={variant} icon={<Box className='size-4' />} loading />
+        <Button key={variant} variant={variant} icon='box' loading />
       ))}
     </div>
   ),
@@ -90,14 +89,14 @@ export const IconPosition: Story = {
     <div className='grid gap-4'>
       <div className='flex flex-wrap gap-4'>
         {variants.map((variant) => (
-          <Button key={variant} variant={variant} icon={<Box className='size-4' />} iconPosition='leading'>
+          <Button key={variant} variant={variant} icon='box' iconPosition='leading'>
             {variant}
           </Button>
         ))}
       </div>
       <div className='flex flex-wrap gap-4'>
         {variants.map((variant) => (
-          <Button key={variant} variant={variant} icon={<Box className='size-4' />} iconPosition='trailing'>
+          <Button key={variant} variant={variant} icon='box' iconPosition='trailing'>
             {variant}
           </Button>
         ))}
