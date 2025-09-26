@@ -91,7 +91,7 @@ const ProgressBar: FC<ProgressIndicatorWithTextProps> = ({
           {baseProgressBar}
           <div
             style={{ left: `${percentage}%` }}
-            className='absolute -top-2 -translate-x-1/2 -translate-y-full rounded-lg bg-primary_alt px-3 py-2 shadow-lg ring-1 ring-secondary_alt'>
+            className='absolute -top-2 -translate-x-1/2 -translate-y-full rounded-sm bg-primary_alt px-3 py-2 shadow-lg ring-1 ring-secondary_alt'>
             <div className='text-xs font-semibold text-secondary tabular-nums'>{formattedValue}</div>
           </div>
         </div>
@@ -102,7 +102,7 @@ const ProgressBar: FC<ProgressIndicatorWithTextProps> = ({
           {baseProgressBar}
           <div
             style={{ left: `${percentage}%` }}
-            className='absolute -bottom-2 -translate-x-1/2 translate-y-full rounded-lg bg-primary_alt px-3 py-2 shadow-lg ring-1 ring-secondary_alt'>
+            className='absolute -bottom-2 -translate-x-1/2 translate-y-full rounded-sm bg-primary_alt px-3 py-2 shadow-lg ring-1 ring-secondary_alt'>
             <div className='text-xs font-semibold text-secondary'>{formattedValue}</div>
           </div>
         </div>
