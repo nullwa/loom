@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { tm } from '@/helpers/tailwind-merge'
 import { getBreadcrumbItems } from '@/helpers/array-of-paths'
 import { ChevronRight, MoreHorizontal } from 'lucide-react'
+import { Breadcrumbs as AriaBreadCrumbs, Breadcrumb as AriaBreadCrumb } from 'react-aria-components'
 
 type ComponentProps = HTMLAttributes<HTMLDivElement> & {
   pathname: string
@@ -32,14 +33,14 @@ const Breadcrumb: FC<ComponentProps> = ({ pathname, ellipsisLevel = 0, ellipsis,
 
   return (
     <nav aria-label='breadcrumb' data-slot='breadcrumb' className={tm('flex items-center text-sm select-none', className)} {...props}>
-      <ol className='flex flex-wrap items-center gap-1.5 sm:gap-2.5 list-none m-0 p-0'>
+      <AriaBreadCrumbs className='flex flex-wrap items-center gap-1.5 sm:gap-2.5 list-none m-0 p-0'>
         {visibleItems.map((item: { label: ReactNode; href: string }, idx: number) => {
           const isLast = idx === visibleItems.length - 1
           const isEllipsis = item.label === '__ellipsis__'
 
           return (
             <Fragment key={idx}>
-              <li className='list-none inline-flex items-center gap-1.5'>
+              <AriaBreadCrumb className='list-none inline-flex items-center gap-1.5'>
                 {isEllipsis ? (
                   <button
                     type='button'
@@ -59,17 +60,17 @@ const Breadcrumb: FC<ComponentProps> = ({ pathname, ellipsisLevel = 0, ellipsis,
                     {item.label}
                   </Link>
                 )}
-              </li>
+              </AriaBreadCrumb>
 
               {!isLast && (
-                <li data-slot='breadcrumb-separator' role='presentation' aria-hidden='true' className='list-none [&>svg]:size-3.5'>
+                <AriaBreadCrumb data-slot='breadcrumb-separator' aria-hidden='true' className='list-none [&>svg]:size-3.5'>
                   <ChevronRight />
-                </li>
+                </AriaBreadCrumb>
               )}
             </Fragment>
           )
         })}
-      </ol>
+      </AriaBreadCrumbs>
     </nav>
   )
 }

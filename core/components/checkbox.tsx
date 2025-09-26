@@ -45,8 +45,8 @@ const Checkbox: FC<ComponentProps> = ({ label, hint, bordered = false, variant =
         </div>
         {label && (
           <div className={tm('flex flex-1 items-start flex-col')}>
-            <p className='text-primary first-letter:uppercase font-semibold text-[16px] mb-0 leading-3.5'>{label}</p>
-            <p className='text-tertiary first-letter:uppercase mt-0.5'>{hint}</p>
+            <p className='text-primary first-letter:uppercase font-semibold text-[16px] leading-3.5'>{label}</p>
+            {hint && <p className='text-tertiary first-letter:uppercase mt-0.5'>{hint}</p>}
           </div>
         )}
       </label>

@@ -2,6 +2,7 @@
 
 import { type FC, type ReactNode } from 'react'
 
+import { tm } from '@/helpers/tailwind-merge'
 import {
   type TooltipProps as AriaTooltipProps,
   type TooltipTriggerComponentProps as AriaTooltipTriggerComponentProps,
@@ -10,7 +11,6 @@ import {
   OverlayArrow as AriaOverlayArrow,
   TooltipTrigger as AriaTooltipTrigger,
 } from 'react-aria-components'
-import { tm } from '@/helpers/tailwind-merge'
 
 interface ComponentProps extends AriaTooltipTriggerComponentProps, Omit<AriaTooltipProps, 'children'> {
   title: ReactNode

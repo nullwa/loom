@@ -23,7 +23,9 @@ export default meta
 
 type Story = StoryObj<typeof Checkbox>
 
-export const Default: Story = {}
+export const Default: Story = {
+  render: () => <Checkbox variant='brand' />,
+}
 
 export const Brand: Story = {
   args: { variant: 'brand', label: 'Brand checkbox', hint: 'Primary style' },
