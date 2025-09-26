@@ -1,39 +1,93 @@
-import { Meta } from '@storybook/addon-docs/blocks'
+import { Meta, Markdown } from '@storybook/addon-docs/blocks'
 
 <Meta title='Changelog' />
 
-## 0.0.6
+# Changelog
 
-- Updated the `array-of-paths` in the return params of the `getPaths` function.
-- _<b>[UI]</b>_ : Added a `BreadCrumb` component.
+All notable changes to **Loom ui** are tracked in a **semantic, API-style changelog**, following a simple workflow:
 
-## 0.0.5
+- **feat** – A new feature
+- **fix / bugfix** – A bug fix
+- **chore** – Changes to build, docs, or non-user-facing code
 
-- introducing the new logo.
-- update the name of the ui library `Loom`.
+<br />
+<br />
 
-## 0.0.4
+## 0.0.7 – 26/09/2025
 
-- _<b>[UI]</b>_ : Added a `Checkbox` component.
-- _<b>[UI]</b>_ : Added an `Avatar` component.
-- Added `getIntials.ts` to render the initial for first nad last name.
-- Sorted the elements in the storybook sidebar
-- Added a changelog `changelog.mdx` tracker
-- _<b>[UI]</b>_ : Added a `Progress-bar` component.
-- _<b>[UI]</b>_ : Added a `Button` component.
+<Markdown className='w-full'>
+  {`
+| Type  | Scope     | Description                                                          |
+| ----- | --------- | -------------------------------------------------------------------- |
+| feat  | ui        | Added \`Tooltip\` component with optional arrow and placement control. |
+| feat  | ui        | Added \`BreadCrumb\` navigation component.                             |
+| feat  | ui        | Added \`Checkbox\`, \`Avatar\`, \`ProgressBar\`, and \`Button\` components.  |
+| feat  | utilities | Added \`getInitials\` helper to generate initials from names.          |
+| feat  | utilities | Added \`color-accessibility\` helper for WCAG2 compliance.             |
+| feat  | utilities | Added \`is-react-component\` helper to check functional components.    |
+| feat  | utilities | Added \`tailwind-merge\` helper to combine Tailwind classes.           |
+| feat  | hooks     | Added \`use-breakpoint\`, \`use-clipboard\`, and \`use-debounce\` hooks. |
+| chore | branding  | Updated library name to **Loom** and introduced new logo.            |
+| chore | styling   | Added \`typography.css\` and \`theme.css\` for consistent design.     |
+`}
+</Markdown>
 
-## 0.0.2
+## 0.0.6 – 15/09/2025
 
-- Added `array-of-path` utility helper to get path from pathname.
-- Added `color-accessibility` helper function to get color compliance based on WGAC2 regulations.
-- Added `is-react-component` helper function to verify if a component belongs to the FC familty type.
-- Added `tailwind-merge` help function to merge tailwind utility classes.
-- Added `use-breakpoint` custom hook.
-- Added `use-clipboard` custom hook.
-- Added `use-debounce` custom hook.
+<Markdown className='w-full'>
+  {`
+| Type | Scope | Description                                               |
+| ---- | ----- | --------------------------------------------------------- |
+| feat | ui    | Added \`Tooltip\` component.                                |
+| feat | ui    | Added \`BreadCrumb\` component.                             |
+| fix  | utils | Updated \`array-of-paths\` return parameters in \`getPaths\`. |
+`}
+</Markdown>
 
-## 0.0.1
+## 0.0.5 – 10/09/2025
 
-- Added custom `typography.css` to handle our own typography.
-- Added custom `theme.css` to generate our theme.
-- Initial release of the Loom UI library.
+<Markdown className='w-full'>
+  {`
+| Type  | Scope    | Description                       |
+| ----- | -------- | --------------------------------- |
+| chore | branding | Introduced the new Loom ui logo.  |
+| chore | branding | Updated library name to **Loom**. |
+`}
+</Markdown>
+
+## 0.0.4 – 05/09/2025
+
+<Markdown className='w-full'>
+  {`
+| Type  | Scope     | Description                                  |
+| ----- | --------- | -------------------------------------------- |
+| feat  | ui        | Added \`Checkbox\` and \`Avatar\` components. |
+| feat  | utilities | Added \`getInitials\` helper.                  |
+| chore | storybook | Sorted Storybook sidebar elements.           |
+| feat  | ui        | Added \`ProgressBar\` and \`Button\` components. |
+| chore | docs      | Added \`changelog.mdx\` tracker.             |
+`}
+</Markdown>
+
+## 0.0.2 – 01/09/2025
+
+<Markdown className='w-full'>
+  {`
+| Type | Scope | Description                                                                      |
+| ---- | ----- | -------------------------------------------------------------------------------- |
+| feat | utilities | Added \`array-of-path\` helper.                                                    |
+| feat | utilities | Added \`color-accessibility\`, \`is-react-component\`, and \`tailwind-merge\` helpers. |
+| feat | hooks     | Added \`use-breakpoint\`, \`use-clipboard\`, \`use-debounce\` hooks.                   |
+`}
+</Markdown>
+
+## 0.0.1 – 28/08/2025
+
+<Markdown className='w-full'>
+  {`
+| Type  | Scope   | Description                                    |
+| ----- | ------- | ---------------------------------------------- |
+| chore | styling | Added custom \`typography.css\` and \`theme.css\`. |
+| feat  | core    | Initial release of Loom ui library.            |
+`}
+</Markdown>
