@@ -6,6 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "story": "storybook dev -p 0008",
+    "story:build": "storybook build",
     "lint": "eslint"
   },
   "dependencies": {
