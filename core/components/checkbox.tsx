@@ -36,12 +36,7 @@ const Checkbox: FC<ComponentProps> = ({ label, hint, bordered = false, variant =
       <label htmlFor={`${label}-checking-item`} className={tm('flex items-start gap-3 cursor-pointer py-3 px-4', disabled && 'cursor-not-allowed')}>
         <div className={tm('relative flex items-center justify-center')}>
           <input id={`${label}-checking-item`} type='checkbox' className={tm(styles({ variant, className }))} disabled={disabled} {...rest} />
-          <Check
-            className={tm(
-              'absolute opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none size-3.5',
-              variant === 'default' ? 'text-black' : 'text-white'
-            )}
-          />
+          <Check className={tm('absolute opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none size-3.5', variant === 'default' ? 'text-black' : 'text-white')} />
         </div>
         {label && (
           <div className={tm('flex flex-1 items-start flex-col')}>

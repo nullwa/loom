@@ -1,5 +1,5 @@
 .prose {
-  --tw-prose-body: var(--color-text-tertiary);
+  /* --tw-prose-body: var(--color-text-tertiary); */
   --tw-prose-headings: var(--color-text-primary);
   --tw-prose-lead: var(--color-text-tertiary);
   --tw-prose-links: var(--color-text-tertiary);
@@ -59,7 +59,10 @@
   font-size: var(--text-lg);
   line-height: var(--text-lg--line-height);
 }
-
+.prose p {
+  text-box-trim: trim-start;
+  text-box-edge: cap alphabetic;
+}
 /* Quotes */
 .prose blockquote {
   color: var(--tw-prose-quotes);

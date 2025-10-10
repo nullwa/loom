@@ -1,5 +1,4 @@
-import { type Meta, type StoryObj } from '@storybook/nextjs'
-
+import type { Meta, StoryObj } from '@storybook/nextjs'
 import { Button } from '@/core/components/button'
 
 const meta = {
@@ -9,113 +8,48 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component: 'Free and open-source React button components built for modern applications and websites. These buttons are styled with Tailwind CSS',
+        component: 'Free and open-source React button components built for modern applications and websites. These buttons are styled with Tailwind CSS.',
       },
+    },
+  },
+
+  argTypes: {
+    variant: {
+      control: { type: 'select' },
+      options: ['default', 'outline', 'error', 'success', 'warning', 'brand', 'ghost'],
+      description: 'The variant style of the button.',
+      defaultValue: 'default',
+    },
+    children: {
+      control: { type: 'text' },
+      description: 'The text to be displayed inside the button.',
+    },
+    isFancy: {
+      control: { type: 'boolean' },
+      description: 'Whether to apply a fancy border style to the button.',
+    },
+    size: {
+      control: { type: 'select' },
+      options: ['sm', 'md', 'lg'],
+      description: 'The size of the button.',
+    },
+    radius: {
+      control: { type: 'radio' },
+      options: ['rounded', 'pilled'],
+      description: 'The border radius of the button.',
     },
   },
 } satisfies Meta<typeof Button>
 
 export default meta
+type Story = StoryObj<typeof Button>
 
-type Story = StoryObj<typeof meta>
-
-const variants = ['primary', 'secondary', 'tertiary', 'error', 'success', 'warning', 'default'] as const
-const sizes = ['sm', 'md', 'lg', 'xl'] as const
-
-export const WithVariants: Story = {
-  name: 'Variants',
-  render: () => (
-    <div className='flex flex-wrap gap-4'>
-      {variants.map((variant) => (
-        <Button key={variant} variant={variant} icon='box'>
-          {variant}
-        </Button>
-      ))}
-    </div>
-  ),
-}
-
-export const DisabledButtons: Story = {
-  name: 'Disabled',
-  render: () => (
-    <div className='flex flex-wrap gap-4'>
-      {variants.map((variant) => (
-        <Button key={variant} variant={variant} icon='box' disabled>
-          {variant}
-        </Button>
-      ))}
-    </div>
-  ),
-}
-
-export const LoadingWithVariants: Story = {
-  name: 'Loading Variants',
-  render: () => (
-    <div className='flex flex-wrap gap-4'>
-      {variants.map((variant) => (
-        <Button key={variant} variant={variant} icon='box' loading>
-          {variant}
-        </Button>
-      ))}
-    </div>
-  ),
-}
-
-export const OnlyIcons: Story = {
-  name: 'Only icons',
-  render: () => (
-    <div className='flex flex-wrap gap-4'>
-      {variants.map((variant) => (
-        <Button key={variant} variant={variant} icon='box' iconsize={16} />
-      ))}
-    </div>
-  ),
-}
-
-export const LoadingOnlyIcons: Story = {
-  name: 'Loading Only icons',
-  render: () => (
-    <div className='flex flex-wrap gap-4'>
-      {variants.map((variant) => (
-        <Button key={variant} variant={variant} icon='box' loading />
-      ))}
-    </div>
-  ),
-}
-
-export const IconPosition: Story = {
-  name: 'Icon Position',
-  render: () => (
-    <div className='grid gap-4'>
-      <div className='flex flex-wrap gap-4'>
-        {variants.map((variant) => (
-          <Button key={variant} variant={variant} icon='box' iconPosition='leading'>
-            {variant}
-          </Button>
-        ))}
-      </div>
-      <div className='flex flex-wrap gap-4'>
-        {variants.map((variant) => (
-          <Button key={variant} variant={variant} icon='box' iconPosition='trailing'>
-            {variant}
-          </Button>
-        ))}
-      </div>
-    </div>
-  ),
-}
-
-export const WithSizes: Story = {
-  name: 'Sizes',
-  render: () => (
-    <div className='grid grid-cols-4 gap-4'>
-      {variants.map((variant) =>
-        sizes.map((size) => (
-          <Button key={`${variant} - ${size}`} variant={variant} size={size}>
-            {`${size} Button`}
-          </Button>
-        ))
-      )}
-    </div>
-  ),
+export const Defafult: Story = {
+  args: {
+    variant: 'brand',
+    children: 'click me',
+    isFancy: false,
+    size: 'sm',
+    radius: 'rounded',
+  },
 }
