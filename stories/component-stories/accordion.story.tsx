@@ -14,21 +14,16 @@ const meta: Meta<typeof Accordion> = {
   },
   argTypes: {
     items: {
+      control: { type: 'object' },
       description: 'Array of accordion items. Each item must have `id`, `title`, and `content`.',
-      control: 'object',
-    },
-    type: {
-      description: 'Accordion type: "single" or "multiple".',
-      control: { type: 'radio' },
-      options: ['single', 'multiple'],
     },
     collapsible: {
+      control: { type: 'boolean' },
       description: 'Whether the accordion can be collapsed.',
-      control: 'boolean',
     },
-    defaultValue: {
-      description: 'Default opened item id(s).',
-      control: 'text',
+    keepOpen: {
+      control: { type: 'boolean' },
+      description: 'Collapse Multiple at a time.',
     },
   },
 }
@@ -39,12 +34,12 @@ type Story = StoryObj<typeof Accordion>
 
 export const Default: Story = {
   args: {
-    type: 'single',
     collapsible: true,
+    keepOpen: false,
     items: [
-      { id: '1', title: 'First item', content: 'Content of the first item.' },
-      { id: '2', title: 'Second item', content: 'Content of the second item.' },
-      { id: '3', title: 'Third item', content: 'Content of the third item.' },
+      { id: '1', title: <p>First item</p>, content: 'Content of the first item.' },
+      { id: '2', title: <p>Second item</p>, content: 'Content of the second item.' },
+      { id: '3', title: <p>Third item</p>, content: 'Content of the third item.' },
     ],
   },
 }

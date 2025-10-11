@@ -11,24 +11,25 @@ type ComponentProps = {
     title: ReactNode
     content: ReactNode
   }[]
-  type: 'single' | 'multiple'
-  defaultValue?: string | string[]
+  keepOpen: boolean
   collapsible?: boolean
 }
 
-export const Accordion: FC<ComponentProps> = ({ items, type = 'single', defaultValue, collapsible = false }) => {
+export const Accordion: FC<ComponentProps> = ({ items, keepOpen = false, collapsible = false }) => {
   return (
-    <AccordionPrimitive.Root type={type} defaultValue={type === 'single' ? (typeof defaultValue === 'string' ? defaultValue : undefined) : Array.isArray(defaultValue) ? defaultValue : undefined} collapsible={collapsible}>
+    <AccordionPrimitive.Root type={keepOpen ? 'multiple' : 'single'} collapsible={collapsible}>
       {items.map((item) => (
-        <AccordionPrimitive.Item key={item.id} value={item.id} data-slot='accordion-item'>
-          <AccordionPrimitive.Header className='flex'>
-            <AccordionPrimitive.Trigger>
-              {item.title}
-              <ChevronDownIcon />
+        <AccordionPrimitive.Item key={item.id} value={item.id} data-slot='accordion-item' className='w-full select-none not-last:mb-2'>
+          {/* header */}
+          <AccordionPrimitive.Header className='w-full min-w-xs bg-secondary border border-secondary rounded-md py-1 px-2 shadow-xs-skeumorphi'>
+            <AccordionPrimitive.Trigger className='w-full text-primary flex items-center justify-between cursor-pointer'>
+              <div>{item.title}</div>
+              <ChevronDownIcon className='size-5 text-secondary' />
             </AccordionPrimitive.Trigger>
           </AccordionPrimitive.Header>
-          <AccordionPrimitive.Content data-slot='accordion-content'>
-            <div className='pt-0 pb-4'>{item.content}</div>
+          {/* content */}
+          <AccordionPrimitive.Content data-slot='accordion-content' className='text-tertiary p-2'>
+            <div>{item.content}</div>
           </AccordionPrimitive.Content>
         </AccordionPrimitive.Item>
       ))}

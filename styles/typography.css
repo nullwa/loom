@@ -58,10 +58,7 @@
   font-size: var(--text-lg);
   line-height: var(--text-lg--line-height);
 }
-.prose p {
-  text-box-trim: trim-start;
-  text-box-edge: cap alphabetic;
-}
+
 /* Quotes */
 .prose blockquote {
   color: var(--tw-prose-quotes);
