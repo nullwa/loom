@@ -1,5 +1,4 @@
 import { type Meta, type StoryObj } from '@storybook/nextjs'
-
 import { ProgressBar } from '@/core/components/progress-bar'
 
 const meta = {
@@ -9,9 +8,55 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component:
-          'A progress bar component that supports different label positions (`right`, `bottom`, `top-floating`, `bottom-floating`) and custom value formatting.',
+        component: 'A progress bar component that supports different label positions (`right`, `bottom`, `top-floating`, `bottom-floating`) and custom value formatting. It also allows customizing styles and colors.',
       },
+    },
+  },
+  argTypes: {
+    value: {
+      control: { type: 'number', min: 0, max: 100, step: 1 },
+      description: 'The current value of the progress bar.',
+      table: { type: { summary: 'number' }, defaultValue: { summary: '0' } },
+    },
+    min: {
+      control: { type: 'number' },
+      description: 'The minimum value of the progress bar range.',
+      table: { type: { summary: 'number' }, defaultValue: { summary: '0' } },
+    },
+    max: {
+      control: { type: 'number' },
+      description: 'The maximum value of the progress bar range.',
+      table: { type: { summary: 'number' }, defaultValue: { summary: '100' } },
+    },
+    bandColor: {
+      control: { type: 'select' },
+      options: ['brand', 'error', 'success', 'warning', 'default'],
+      description: 'The color variant of the progress bar.',
+      table: { type: { summary: "'brand' | 'error' | 'success' | 'warning' | 'default'" }, defaultValue: { summary: 'brand' } },
+    },
+    labelPosition: {
+      control: { type: 'select' },
+      options: ['right', 'bottom', 'top-floating', 'bottom-floating', undefined],
+      description: 'Where the label (value text) is displayed relative to the bar.',
+      table: {
+        type: { summary: "'right' | 'bottom' | 'top-floating' | 'bottom-floating' | undefined" },
+        defaultValue: { summary: 'undefined' },
+      },
+    },
+    valueFormatter: {
+      control: false,
+      description: 'Optional function to format the displayed value. Receives `(value, percentage)` and should return a string or number.',
+      table: { type: { summary: '(value: number, percentage: number) => string | number' } },
+    },
+    className: {
+      control: { type: 'text' },
+      description: 'Additional CSS class for the wrapper element.',
+      table: { type: { summary: 'string' } },
+    },
+    progressClassName: {
+      control: { type: 'text' },
+      description: 'Additional CSS class for the inner progress bar.',
+      table: { type: { summary: 'string' } },
     },
   },
 } satisfies Meta<typeof ProgressBar>
@@ -20,39 +65,15 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const WithVariants: Story = {
-  name: 'Variants',
+export const Playground: Story = {
+  name: 'Playground',
   args: {
     value: 45,
-    bandColor: "brand",
-    labelPosition: "right"
-  },
-}
-
-export const WithLabelRight: Story = {
-  args: {
-    value: 45,
+    min: 0,
+    max: 100,
+    bandColor: 'brand',
     labelPosition: 'right',
-    progressClassName: "bg-fg-brand-primary"
-  },
-}
-
-export const WithLabelBottom: Story = {
-  args: { value: 65, labelPosition: 'bottom' },
-}
-
-export const WithLabelTopFloating: Story = {
-  args: { value: 30, labelPosition: 'top-floating' },
-}
-
-export const WithLabelBottomFloating: Story = {
-  args: { value: 75, labelPosition: 'bottom-floating' },
-}
-
-export const CustomValueFormatter: Story = {
-  args: {
-    value: 33,
-    labelPosition: 'right',
-    valueFormatter: (value, percentage) => `${value} of 100 (${percentage.toFixed(1)}%)`,
+    className: '',
+    progressClassName: '',
   },
 }

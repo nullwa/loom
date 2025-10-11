@@ -1,8 +1,8 @@
 @theme {
   /* FONT FAMILY */
-  --font-body: var(--font-inter, 'Inter'), -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-  --font-display: var(--font-inter, 'Inter'), -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-  --font-mono: ui-monospace, 'Roboto Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-body: 'IBM Plex Sans', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-display: 'IBM Plex Sans', -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-mono: 'IBM Plex Sans', ui-monospace, 'Roboto Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
   /* FONT SIZE */
   --text-xs: calc(var(--spacing) * 2.5);
@@ -14,11 +14,8 @@
   --text-md: calc(var(--spacing) * 3.5);
   --text-md--line-height: calc(var(--spacing) * 5);
 
-  --text-body: calc(var(--spacing) * 4);
-  --text-body--line-height: calc(var(--spacing) * 6);
-
-  --text-lg: calc(var(--spacing) * 4.5);
-  --text-lg--line-height: calc(var(--spacing) * 7);
+  --text-lg: calc(var(--spacing) * 4);
+  --text-lg--line-height: calc(var(--spacing) * 6.5);
 
   --text-xl: calc(var(--spacing) * 5);
   --text-xl--line-height: calc(var(--spacing) * 7.5);
@@ -81,10 +78,8 @@
   --shadow-modern-mockup-inner-md: 0px 0px 1.692px 0.564px rgba(10, 13, 18, 0.08) inset, 0px 0px 1.128px 0.564px rgba(10, 13, 18, 0.03) inset;
   --shadow-modern-mockup-inner-sm: 0px 0px 4.48px 1.493px rgba(10, 13, 18, 0.08) inset, 0px 0px 2.987px 1.493px rgba(10, 13, 18, 0.03) inset;
 
-  --shadow-modern-mockup-outer-lg: 0px 7.529px 10.039px -2.51px rgba(10, 13, 18, 0.08), 0px 2.51px 3.765px -1.255px rgba(10, 13, 18, 0.03),
-    0px 1.255px 1.255px -0.627px rgba(10, 13, 18, 0.04);
-  --shadow-modern-mockup-outer-md: 0px 3.385px 4.513px -1.128px rgba(10, 13, 18, 0.08), 0px 1.128px 1.692px -0.564px rgba(10, 13, 18, 0.03),
-    0px 0.564px 0.564px -0.282px rgba(10, 13, 18, 0.04);
+  --shadow-modern-mockup-outer-lg: 0px 7.529px 10.039px -2.51px rgba(10, 13, 18, 0.08), 0px 2.51px 3.765px -1.255px rgba(10, 13, 18, 0.03), 0px 1.255px 1.255px -0.627px rgba(10, 13, 18, 0.04);
+  --shadow-modern-mockup-outer-md: 0px 3.385px 4.513px -1.128px rgba(10, 13, 18, 0.08), 0px 1.128px 1.692px -0.564px rgba(10, 13, 18, 0.03), 0px 0.564px 0.564px -0.282px rgba(10, 13, 18, 0.04);
 
   --drop-shadow-iphone-mockup: 20px 12px 18px rgba(16, 24, 40, 0.2);
 
@@ -113,7 +108,6 @@
   }
 
   /* BASE COLOR */
-  --color-transparent: 255 rgb(255 255 0);
 
   --color-white: rgb(255 255 255);
   --color-black: rgb(0 0 0);
@@ -177,15 +171,15 @@
   --color-gray-25: rgb(253 253 253);
   --color-gray-50: rgb(250 250 250);
   --color-gray-100: rgb(245 245 245);
-  --color-gray-200: rgb(233 234 235);
-  --color-gray-300: rgb(213 215 218);
-  --color-gray-400: rgb(164 167 174);
-  --color-gray-500: rgb(113 118 128);
-  --color-gray-600: rgb(83 88 98);
-  --color-gray-700: rgb(65 70 81);
-  --color-gray-800: rgb(37 43 55);
-  --color-gray-900: rgb(24 29 39);
-  --color-gray-950: rgb(10 13 18);
+  --color-gray-200: rgb(229 229 229);
+  --color-gray-300: rgb(212 212 212);
+  --color-gray-400: rgb(163 163 163);
+  --color-gray-500: rgb(115 115 115);
+  --color-gray-600: rgb(82 82 82);
+  --color-gray-700: rgb(64 64 64);
+  --color-gray-800: rgb(38 38 38);
+  --color-gray-900: rgb(23 23 23);
+  --color-gray-950: rgb(10 10 10);
 
   --color-gray-blue-25: rgb(252 252 253);
   --color-gray-blue-50: rgb(248 249 252);

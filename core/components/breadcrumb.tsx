@@ -6,25 +6,20 @@ import Link from 'next/link'
 import { tm } from '@/helpers/tailwind-merge'
 import { getBreadcrumbItems } from '@/helpers/array-of-paths'
 import { ChevronRight, MoreHorizontal } from 'lucide-react'
-import { Breadcrumbs as AriaBreadCrumbs, Breadcrumb as AriaBreadCrumb } from 'react-aria-components'
 
 type ComponentProps = HTMLAttributes<HTMLDivElement> & {
   pathname: string
-  ellipsisLevel?: number
-  ellipsis?: boolean
+  ellipsis?: number
 }
 
-const Breadcrumb: FC<ComponentProps> = ({ pathname, ellipsisLevel = 0, ellipsis, className, ...props }) => {
+const Breadcrumb: FC<ComponentProps> = ({ pathname, ellipsis = 0, className, ...props }) => {
   const items = useMemo(() => getBreadcrumbItems(pathname), [pathname])
 
-  // Number of middle items to hide (non-negative integer)
-  const hideCount = Math.max(0, Math.floor(ellipsisLevel ?? 0))
+  const hideCount = Math.max(0, Math.floor(ellipsis))
   const total = items.length
 
-  // Build visibleItems: default = all items
   let visibleItems = items
 
-  // Only apply collapse when there are middle items to hide and at least 3 items total (first + middle + last)
   if (hideCount > 0 && total > 2) {
     const middleCount = total - 2
     if (hideCount >= middleCount) visibleItems = [items[0], { label: '__ellipsis__', href: '#' }, items[total - 1]]
@@ -32,45 +27,40 @@ const Breadcrumb: FC<ComponentProps> = ({ pathname, ellipsisLevel = 0, ellipsis,
   }
 
   return (
-    <nav aria-label='breadcrumb' data-slot='breadcrumb' className={tm('flex items-center text-sm select-none', className)} {...props}>
-      <AriaBreadCrumbs className='flex flex-wrap items-center gap-1.5 sm:gap-2.5 list-none m-0 p-0'>
+    <nav aria-label='breadcrumb' className={tm('flex items-center text-sm select-none', className)} {...props}>
+      <ol className='flex flex-wrap items-center gap-1.5 sm:gap-2.5 list-none m-0 p-0'>
         {visibleItems.map((item: { label: ReactNode; href: string }, idx: number) => {
           const isLast = idx === visibleItems.length - 1
           const isEllipsis = item.label === '__ellipsis__'
 
           return (
             <Fragment key={idx}>
-              <AriaBreadCrumb className='list-none inline-flex items-center gap-1.5'>
+              <li className='inline-flex items-center gap-1.5'>
                 {isEllipsis ? (
-                  <button
-                    type='button'
-                    data-slot='breadcrumb-ellipsis'
-                    aria-hidden='false'
-                    aria-label='Show more breadcrumb items'
-                    className='flex size-9 items-center justify-center'>
-                    {ellipsis && <MoreHorizontal className='size-4' />}
+                  <button type='button' aria-label='Show more breadcrumb items' className='flex h-9 w-9 items-center justify-center text-secondary'>
+                    {ellipsis && <MoreHorizontal className='h-4 w-4' />}
                     <span className='sr-only'>More</span>
                   </button>
                 ) : isLast ? (
-                  <span data-slot='breadcrumb-page' role='link' aria-disabled='true' aria-current='page' className='text-primary font-semibold'>
+                  <span aria-current='page' className='text-primary font-semibold'>
                     {item.label}
                   </span>
                 ) : (
-                  <Link href={item.href} data-slot='breadcrumb-link' className='hover:text-primary font-semibold transition-colors'>
+                  <Link href={item.href} className='hover:text-primary font-semibold transition-colors'>
                     {item.label}
                   </Link>
                 )}
-              </AriaBreadCrumb>
+              </li>
 
               {!isLast && (
-                <AriaBreadCrumb data-slot='breadcrumb-separator' aria-hidden='true' className='list-none [&>svg]:size-3.5'>
+                <li aria-hidden='true' className='inline-flex items-center text-secondary [&>svg]:h-3.5 [&>svg]:w-3.5'>
                   <ChevronRight />
-                </AriaBreadCrumb>
+                </li>
               )}
             </Fragment>
           )
         })}
-      </AriaBreadCrumbs>
+      </ol>
     </nav>
   )
 }

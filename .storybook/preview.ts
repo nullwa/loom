@@ -28,11 +28,7 @@ export const globalTypes = {
     defaultValue: 'light',
     toolbar: {
       icon: 'circlehollow',
-      items: [
-        { value: 'light-mode', title: 'Light Theme' },
-        { value: 'dark-mode', title: 'Dark Theme' },
-        { value: 'both', title: 'Both Themes', default: true },
-      ],
+      items: [{ value: 'default', title: 'Default', default: true }],
       showName: true,
       dynamicTitle: true,
     },

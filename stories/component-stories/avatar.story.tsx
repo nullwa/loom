@@ -1,105 +1,59 @@
-import { type Meta, type StoryObj } from '@storybook/nextjs'
-
+import type { Meta, StoryObj } from '@storybook/nextjs'
 import { Avatar } from '@/core/components/avatar'
-import { User } from 'lucide-react'
 
 const meta = {
-  title: 'Components/Avatar',
+  title: 'components/Avatar',
   component: Avatar,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Free and open-source React avatar components built for modern applications and websites. These avatars are styled with Tailwind CSS.',
+      },
+    },
+  },
+
   argTypes: {
+    fallback: {
+      control: { type: 'text' },
+      description: 'The fallback string where image not valid.',
+    },
     size: {
-      control: 'select',
-      options: ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'],
-      description: 'Size of the avatar',
+      control: { type: 'select' },
+      options: ['sm', 'md', 'lg'],
+      description: 'The size of the avatar element.',
     },
-    src: { control: 'text', description: 'Image URL for the avatar' },
-    alt: { control: 'text', description: 'Alt text for image' },
-    initials: { control: 'text', description: 'Initials to display if no image' },
+    radius: {
+      control: { type: 'radio' },
+      options: ['rounded', 'squared'],
+      description: 'The border radius of the avatar element.',
+    },
+    src: {
+      control: { type: 'text' },
+      description: 'the source image.',
+    },
     status: {
-      control: 'select',
-      options: ['online', 'offline'],
-      description: 'Online/offline status indicator',
+      control: { type: 'select' },
+      options: ['online', 'offline', 'busy', 'away'],
+      description: 'status of the user if enabled.',
     },
-    verified: { control: 'boolean', description: 'Show verified badge' },
-    placeholderIcon: { control: false, description: 'Custom placeholder icon component' },
-    placeholder: { control: false, description: 'Custom placeholder node' },
-    contrastBorder: { control: 'boolean', description: 'Add border for contrast' },
-    focusable: { control: 'boolean', description: 'Enable focus outline' },
-    className: { control: 'text', description: 'Custom Tailwind classes' },
+    verfied: {
+      control: { type: 'boolean' },
+      description: 'the user shown is a verified user or not.',
+    },
   },
 } satisfies Meta<typeof Avatar>
 
 export default meta
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof Avatar>
 
-const sizes = ['xxs', 'xs', 'sm', 'md', 'lg', 'xl', '2xl'] as const
-const statuses = ['online', 'offline'] as const
-
-export const SizeVariants: Story = {
-  name: 'Size Variants',
-  render: () => (
-    <div className='flex flex-wrap gap-6 items-center'>
-      {sizes.map((size) => (
-        <div key={size} className='flex flex-col items-center gap-2'>
-          <Avatar size={size} initials='WS' />
-          <span className='text-xs'>{size}</span>
-        </div>
-      ))}
-    </div>
-  ),
-}
-
-export const StatusVariants: Story = {
-  name: 'Status Variants',
-  render: () => (
-    <div className='flex flex-wrap gap-6 items-center'>
-      {statuses.map((status) => (
-        <div key={status} className='flex flex-col items-center gap-2'>
-          <Avatar size='md' status={status} initials='WS' />
-          <span className='text-xs'>{status}</span>
-        </div>
-      ))}
-    </div>
-  ),
-}
-
-export const Verified: Story = {
-  name: 'Verified Badge',
-  render: () => (
-    <div className='flex flex-wrap gap-6 items-center'>
-      {sizes.map((size) => (
-        <div key={size} className='flex flex-col items-center gap-2'>
-          <Avatar size={size} verified initials='WS' />
-          <span className='text-xs'>{size}</span>
-        </div>
-      ))}
-    </div>
-  ),
-}
-
-export const WithImage: Story = {
-  name: 'Avatar with Image',
+export const Default: Story = {
   args: {
-    size: 'md',
-    src: 'https://instagram.ftun14-1.fna.fbcdn.net/v/t51.288…pVHj2OlptDDZiVN4MLRRvQ&oe=68DCC30B&_nc_sid=7d3ac5',
-    alt: 'User Avatar',
-  },
-}
-
-export const PlaceholderIcon: Story = {
-  name: 'Custom Placeholder Icon',
-  args: {
-    size: 'md',
-    placeholderIcon: User,
-  },
-}
-
-export const Focusable: Story = {
-  name: 'Focusable Avatar',
-  args: {
-    size: 'md',
-    initials: 'WS',
-    focusable: true,
+    src: 'https://avatars.githubusercontent.com/u/213305469?v=4',
+    fallback: 'S8',
+    size: 'sm',
+    radius: 'rounded',
+    status: undefined,
+    verfied: false,
   },
 }

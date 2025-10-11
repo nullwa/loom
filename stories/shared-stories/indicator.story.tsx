@@ -18,7 +18,7 @@ const meta = {
     },
     size: {
       control: 'select',
-      options: ['xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
       description: 'Size of the indicator',
       table: {
         type: { summary: 'string' },
@@ -33,7 +33,7 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 const statuses = ['online', 'offline', 'busy', 'away'] as const
-const sizes = ['xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'] as const
+const sizes = ['xs', 'sm', 'md', 'lg', 'xl'] as const
 
 export const Playground: Story = {
   name: 'Status Variants',
