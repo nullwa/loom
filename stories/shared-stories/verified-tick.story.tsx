@@ -9,17 +9,21 @@ const meta = {
   parameters: {
     docs: {
       description: {
-        component:
-          'The **VerifiedTick** component renders a checkmark badge. It supports multiple predefined sizes (`xs` → `4xl`) and accepts additional Tailwind classes via `className`.',
+        component: 'The **VerifiedTick** component renders a checkmark badge. It supports multiple predefined sizes (`xs` → `4xl`) and accepts additional Tailwind classes via `className`.',
       },
     },
   },
   argTypes: {
     size: {
       control: { type: 'select' },
-      options: ['xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'],
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
       description: 'Size of the tick icon.',
       defaultValue: 'md',
+    },
+    position: {
+      control: { type: 'select' },
+      options: ['top', 'left', 'right'],
+      description: 'Position of the tick icon.',
     },
     className: {
       control: 'text',
@@ -35,7 +39,7 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-const sizes = ['xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl'] as const
+const sizes = ['xs', 'sm', 'md', 'lg', 'xl'] as const
 const colors = ['brand', 'default', 'error', 'success', 'warning'] as const
 
 export const Playground: Story = {

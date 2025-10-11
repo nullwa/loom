@@ -80,7 +80,6 @@
 
 /* Media */
 .prose img {
-  border-radius: var(--radius-xl);
   width: 100%;
   object-fit: cover;
 }

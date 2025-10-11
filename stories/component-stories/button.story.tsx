@@ -63,7 +63,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof Button>
 
-export const Defafult: Story = {
+export const Default: Story = {
   args: {
     variant: 'default',
     children: 'click me',
