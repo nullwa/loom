@@ -5,7 +5,7 @@ import { type FC, type ReactNode } from 'react'
 import { tm } from '@/helpers/tailwind-merge'
 import { Tooltip as TooltipPrimitive } from 'radix-ui'
 
-interface TooltipProps {
+interface ComponentProps {
   title: ReactNode
   description?: ReactNode
   children: ReactNode
@@ -14,7 +14,7 @@ interface TooltipProps {
   placement?: 'top' | 'right' | 'bottom' | 'left'
 }
 
-const Tooltip: FC<TooltipProps> = ({ title, description, children, arrow = false, delay = 300, placement = 'top' }) => {
+const Tooltip: FC<ComponentProps> = ({ title, description, children, arrow = false, delay = 300, placement = 'top' }) => {
   return (
     <TooltipPrimitive.Provider delayDuration={delay}>
       <TooltipPrimitive.Root>
@@ -34,15 +34,15 @@ const Tooltip: FC<TooltipProps> = ({ title, description, children, arrow = false
             align='center'
             sideOffset={6}
             className={tm(
-              'z-50 flex max-w-xs flex-col items-start gap-0.5 rounded-lg bg-primary-solid px-3 shadow-lg will-change-transform',
+              'select-none z-50 flex max-w-xs flex-col items-start gap-0.5 rounded-lg bg-primary-solid px-3 will-change-transform shadow-xs-skeumorphic',
               description ? 'py-3' : 'py-2',
               'data-[state=delayed-open]:animate-in data-[state=closed]:animate-out',
               'data-[state=delayed-open]:fade-in data-[state=closed]:fade-out',
               'data-[side=top]:slide-in-from-bottom-0.5 data-[side=bottom]:slide-in-from-top-0.5',
               'data-[side=left]:slide-in-from-right-0.5 data-[side=right]:slide-in-from-left-0.5'
             )}>
-            <span className='text-sm font-semibold text-white'>{title}</span>
-            {description && <span className='text-xs text-tooltip-supporting-text'>{description}</span>}
+            <span className='text-md font-semibold text-white'>{title}</span>
+            {description && <span className='text-sm text-tooltip-supporting-text'>{description}</span>}
 
             {arrow && <TooltipPrimitive.Arrow width={10} height={5} className='fill-bg-primary-solid' />}
           </TooltipPrimitive.Content>

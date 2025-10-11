@@ -19,13 +19,12 @@
   /* Base */
   color: var(--tw-prose-body);
   font-size: var(--text-md);
-  line-height: var(--text-md--line-height);
+  line-height: 100%;
 }
 
 /* Text elements */
 .prose :where(p, .lead) {
   font-size: var(--text-md);
-  line-height: var(--text-md--line-height);
 }
 
 /* Lists */
