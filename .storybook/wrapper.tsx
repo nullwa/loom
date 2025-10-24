@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import { StoryContext } from '@storybook/nextjs'
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 const Wrapper = (Story, context: StoryContext) => {
   const { theme } = context.globals
 

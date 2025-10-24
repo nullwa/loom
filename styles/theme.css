@@ -108,7 +108,6 @@
   }
 
   /* BASE COLOR */
-
   --color-white: rgb(255 255 255);
   --color-black: rgb(0 0 0);
 
@@ -494,7 +493,6 @@
   --color-yellow-950: rgb(84 44 13);
 
   /* LIGHT MODE VARIABLES */
-
   --color-alpha-white: rgb(255 255 255);
   --color-alpha-black: rgb(0 0 0);
 
