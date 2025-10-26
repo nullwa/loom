@@ -51,7 +51,7 @@ export const Default: Story = {
   args: {
     src: 'https://avatars.githubusercontent.com/u/213305469?v=4',
     fallback: 'S8',
-    size: 'sm',
+    size: 'md',
     radius: 'rounded',
     status: undefined,
     verfied: false,

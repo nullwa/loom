@@ -27,7 +27,7 @@ const Breadcrumb: FC<ComponentProps> = ({ pathname, ellipsis = 0, className, ...
   }
 
   return (
-    <nav aria-label='breadcrumb' className={tm('flex items-center text-sm select-none', className)} {...props}>
+    <nav aria-label='breadcrumb' className={tm('flex items-center text-md select-none', className)} {...props}>
       <ol className='flex flex-wrap items-center gap-1.5 sm:gap-2.5 list-none m-0 p-0'>
         {visibleItems.map((item: { label: ReactNode; href: string }, idx: number) => {
           const isLast = idx === visibleItems.length - 1

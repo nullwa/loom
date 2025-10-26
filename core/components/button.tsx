@@ -63,7 +63,7 @@ const styles = cva(
     },
     defaultVariants: {
       variant: 'default',
-      size: 'sm',
+      size: 'md',
       isFancy: false,
       radius: 'rounded',
     },

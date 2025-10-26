@@ -68,7 +68,7 @@ export const Default: Story = {
     variant: 'default',
     children: 'click me',
     isFancy: false,
-    size: 'sm',
+    size: 'md',
     radius: 'rounded',
     loading: false,
     icon: undefined,
