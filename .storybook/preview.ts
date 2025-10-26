@@ -1,5 +1,6 @@
 import '../styles/globals.css'
-import Wrapper from './wrapper'
+
+import Wrapper from './components/wrapper'
 
 import { type Preview } from '@storybook/nextjs'
 
@@ -18,9 +19,6 @@ const preview: Preview = {
         order: ['Introduction', ['Components', 'Shared', 'Utils', 'Helpers', 'Changelog']],
       },
     },
-    docs: {
-      layout: 'fullscreen',
-    },
     backgrounds: null,
   },
   globalTypes: {
@@ -35,6 +33,19 @@ const preview: Preview = {
         ],
         showName: false,
         dynamicTitle: false,
+      },
+    },
+    RTL: {
+      name: 'RTL',
+      description: 'Controls RTL mode',
+      defaultValue: 'LRT',
+      toolbar: {
+        icon: 'transfer',
+        dynamicTitle: true,
+        items: [
+          { value: 'ltr', right: '⇒', title: 'LTR' },
+          { value: 'rtl', right: '⇐', title: 'RTL' },
+        ],
       },
     },
   },
