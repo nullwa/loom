@@ -8,16 +8,12 @@ const Wrapper = (Story, context: StoryContext) => {
 
   useEffect(() => {
     console.log(theme)
-  }, [theme])
+    console.log(context)
+  }, [theme, context])
 
   return (
-    <div className='grid grid-cols-1 prose'>
-      <div id='light-preview' className='px-4 py-16 flex items-center justify-center bg-primary'>
-        <Story />
-      </div>
-      <div id='dark-preview' className='dark-mode px-4 py-16 flex items-center justify-center bg-primary'>
-        <Story />
-      </div>
+    <div id='light-preview' className='prose p-4 flex items-center justify-center bg-primary'>
+      <Story />
     </div>
   )
 }

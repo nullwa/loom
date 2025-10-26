@@ -13,9 +13,9 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "radix-ui": "^1.4.3",
     "@eslint/eslintrc": "^3",
     "@storybook/addon-docs": "^9.1.5",
+    "@storybook/addon-themes": "^9.1.15",
     "@storybook/nextjs": "^9.1.5",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
@@ -25,6 +25,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
     "lucide-react": "^0.543.0",
+    "radix-ui": "^1.4.3",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4",
     "tailwindcss-animate": "^1.0.7",

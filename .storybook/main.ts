@@ -2,7 +2,7 @@ import type { StorybookConfig } from '@storybook/nextjs'
 
 const config: StorybookConfig = {
   stories: ['../stories/**/*.mdx', '../stories/**/*.story.@(ts|tsx)'],
-  addons: ['@storybook/addon-docs'],
+  addons: ['@storybook/addon-docs', '@storybook/addon-themes'],
   framework: {
     name: '@storybook/nextjs',
     options: {
@@ -14,6 +14,9 @@ const config: StorybookConfig = {
     ${head}
     <link rel="icon" type="image/x-icon" href="/loom-ui-blue.svg" />
   `,
+  docs: {
+    docsMode: true,
+  },
 }
 
 export default config
