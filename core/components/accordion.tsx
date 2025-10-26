@@ -43,7 +43,7 @@ const Accordion: FC<ComponentProps> = ({ variant = 'solid', indicator = 'arrow',
               </AccordionPrimitive.Trigger>
             </AccordionPrimitive.Header>
 
-            <AccordionPrimitive.Content data-slot='accordion-content' className='p-2 text-md transition-all overflow-hidden'>
+            <AccordionPrimitive.Content data-slot='accordion-content' className='p-2 text-md text-secondary transition-all overflow-hidden'>
               <AnimatePresence>
                 <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.25 }}>
                   {content}
@@ -59,7 +59,7 @@ const Accordion: FC<ComponentProps> = ({ variant = 'solid', indicator = 'arrow',
 
 Accordion.displayName = 'Accordion'
 
-const styles = cva('cursor-pointer w-full flex items-center text-lg font-medium justify-between gap-2 p-2 capitalize', {
+const styles = cva('cursor-pointer w-full flex items-center text-lg text-primary font-medium justify-between gap-2 p-2 capitalize', {
   variants: {
     variant: {
       default: 'border-b border-secondary rounded-none',
