@@ -59,7 +59,7 @@ const Accordion: FC<ComponentProps> = ({ variant = 'solid', indicator = 'arrow',
 
 Accordion.displayName = 'Accordion'
 
-const styles = cva('cursor-pointer w-full flex items-center text-lg text-primary font-medium justify-between gap-2 p-2 capitalize', {
+const styles = cva('cursor-pointer w-full flex items-center text-lg text-primary font-medium justify-between gap-2 py-1 px-2 capitalize', {
   variants: {
     variant: {
       default: 'border-b border-secondary rounded-none',
