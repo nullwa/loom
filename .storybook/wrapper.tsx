@@ -8,11 +8,10 @@ const Wrapper = (Story, context: StoryContext) => {
 
   useEffect(() => {
     console.log(theme)
-    console.log(context)
-  }, [theme, context])
+  }, [theme])
 
   return (
-    <div id='light-preview' className='prose p-4 flex items-center justify-center bg-primary'>
+    <div id='light-preview' className={`prose p-4 flex items-center justify-center ${theme === 'dark' && 'dark-mode'} bg-primary`}>
       <Story />
     </div>
   )
