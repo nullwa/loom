@@ -58,7 +58,7 @@ export const Default: Story = {
     count: undefined,
     removable: false,
     icon: undefined,
-    radius: 'pilled',
+    radius: 'squared',
     variant: 'brand',
   },
 }

@@ -40,7 +40,7 @@ const styles = cva(
     variants: {
       variant: {
         default: 'bg-fg-primary text-bg-primary shadow-xs-skeumorphic ring-1 ring-transparent ring-inset hover:bg-fg-secondary_hover data-loading:bg-fg-secondary_hover',
-        outline: 'bg-primary text-primary shadow-xs-skeumorphic ring-1 ring-primary ring-inset hover:bg-primary_hover data-loading:bg-primary_hover',
+        outline: 'bg-secondary text-primary shadow-xs-skeumorphic ring-1 ring-primary ring-inset hover:bg-primary_hover data-loading:bg-primary_hover',
         error: 'bg-error-solid text-white shadow-xs-skeumorphic ring-1 ring-transparent ring-inset hover:bg-error-700 dark:hover:bg-error-500 data-loading:bg-error-700 dark:data-loading:bg-error-500',
         success: 'bg-success-solid text-white shadow-xs-skeumorphic ring-1 ring-transparent ring-inset hover:bg-success-700 dark:hover:bg-success-500 data-loading:bg-success-700 dark:data-loading:bg-success-500',
         warning: 'bg-warning-solid text-white shadow-xs-skeumorphic ring-1 ring-transparent ring-inset hover:bg-warning-700 dark:hover:bg-warning-500 data-loading:bg-warning-700 dark:data-loading:bg-warning-500',
@@ -57,7 +57,7 @@ const styles = cva(
         lg: 'h-10 min-w-10 px-5 text-lg',
       },
       radius: {
-        rounded: 'rounded-sm before:rounded-[3px]',
+        rounded: 'rounded-xs before:rounded-[1px]',
         pilled: 'rounded-full before:rounded-full',
       },
     },

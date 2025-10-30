@@ -34,14 +34,14 @@ const Tooltip: FC<ComponentProps> = ({ title, description, children, arrow = fal
             align='center'
             sideOffset={6}
             className={tm(
-              'select-none z-50 flex max-w-xs flex-col items-start gap-0.5 rounded-lg bg-primary-solid px-3 will-change-transform shadow-xs-skeumorphic',
+              'select-none z-50 flex max-w-xs flex-col items-start gap-0.5 rounded-xs bg-primary-solid px-3 will-change-transform shadow-xs-skeumorphic',
               description ? 'py-3' : 'py-2',
               'data-[state=delayed-open]:animate-in data-[state=closed]:animate-out',
               'data-[state=delayed-open]:fade-in data-[state=closed]:fade-out',
               'data-[side=top]:slide-in-from-bottom-0.5 data-[side=bottom]:slide-in-from-top-0.5',
               'data-[side=left]:slide-in-from-right-0.5 data-[side=right]:slide-in-from-left-0.5'
             )}>
-            <span className='text-md font-semibold text-white'>{title}</span>
+            <span className='text-md font-medium text-white'>{title}</span>
             {description && <span className='text-sm text-tooltip-supporting-text'>{description}</span>}
 
             {arrow && <TooltipPrimitive.Arrow width={10} height={5} className='fill-bg-primary-solid' />}

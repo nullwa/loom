@@ -54,12 +54,18 @@ Expandable and collapsible content section built on Radix UI primitives.
         defaultValue: { summary: 'arrow' },
       },
     },
+    size: {
+      control: 'select',
+      options: ['sm', 'md', 'lg'],
+      description: 'Size of the accordion trigger.',
+    },
   },
   args: {
     type: 'single',
     collapsible: true,
     variant: 'solid',
     indicator: 'arrow',
+    size: 'md',
   },
 }
 
@@ -105,5 +111,6 @@ export const Default: Story = {
         ),
       },
     ],
+    size: 'md',
   },
 }

@@ -13,7 +13,7 @@ type ComponentProps = VariantProps<typeof styles> & {
   onClick?: () => void
 }
 
-const Badge: FC<ComponentProps> = ({ text, icon, count, removable = false, variant = 'brand', radius = 'pilled', onRemove, onClick }) => {
+const Badge: FC<ComponentProps> = ({ text, icon, count, removable = false, variant = 'brand', radius = 'squared', onRemove, onClick }) => {
   return (
     <div className={tm(styles({ variant, radius }))} onClick={onClick} aria-label={text ?? 'badge'}>
       {icon && <DynamicIcon name={icon} size={14} aria-hidden />}
@@ -51,12 +51,12 @@ const styles = cva('select-none flex items-center gap-1 px-2 py-0.5 font-medium 
     },
     radius: {
       pilled: 'rounded-full',
-      squared: 'rounded-md',
+      squared: 'rounded-xs',
     },
   },
   defaultVariants: {
     variant: 'brand',
-    radius: 'pilled',
+    radius: 'squared',
   },
 })
 
