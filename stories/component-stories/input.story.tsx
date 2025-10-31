@@ -30,7 +30,7 @@ const meta = {
       description: 'The size of the input.'
     },
     radius: {
-      control: {type: 'select'},
+      control: {type: 'radio'},
       options: ['squared', 'pilled'],
       description: 'The border radius of the input.'
     },
