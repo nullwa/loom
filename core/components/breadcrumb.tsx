@@ -1,6 +1,6 @@
 'use client'
 
-import { type FC, type ReactNode, type HTMLAttributes, Fragment, useMemo } from 'react'
+import { type FC, Fragment, type HTMLAttributes, type ReactNode, useMemo } from 'react'
 import Link from 'next/link'
 
 import { tm } from '@/helpers/tailwind-merge'
@@ -12,7 +12,7 @@ type ComponentProps = HTMLAttributes<HTMLDivElement> & {
   ellipsis?: number
 }
 
-const Breadcrumb: FC<ComponentProps> = ({ pathname, ellipsis = 0, className, ...props }) => {
+const Breadcrumb: FC<ComponentProps> = ({pathname, ellipsis = 0, className, ...props}) => {
   const items = useMemo(() => getBreadcrumbItems(pathname), [pathname])
 
   const hideCount = Math.max(0, Math.floor(ellipsis))
@@ -22,8 +22,8 @@ const Breadcrumb: FC<ComponentProps> = ({ pathname, ellipsis = 0, className, ...
 
   if (hideCount > 0 && total > 2) {
     const middleCount = total - 2
-    if (hideCount >= middleCount) visibleItems = [items[0], { label: '__ellipsis__', href: '#' }, items[total - 1]]
-    else visibleItems = [items[0], { label: '__ellipsis__', href: '#' }, ...items.slice(1 + hideCount, total)]
+    if (hideCount >= middleCount) visibleItems = [items[0], {label: '__ellipsis__', href: '#'}, items[total - 1]]
+    else visibleItems = [items[0], {label: '__ellipsis__', href: '#'}, ...items.slice(1 + hideCount, total)]
   }
 
   return (
@@ -38,7 +38,7 @@ const Breadcrumb: FC<ComponentProps> = ({ pathname, ellipsis = 0, className, ...
               <li className='inline-flex items-center gap-1.5'>
                 {isEllipsis ? (
                   <button type='button' aria-label='Show more breadcrumb items' className='flex h-9 w-9 items-center justify-center text-secondary'>
-                    {ellipsis && <MoreHorizontal className='h-4 w-4' />}
+                    {ellipsis && <MoreHorizontal className='h-4 w-4'/>}
                     <span className='sr-only'>More</span>
                   </button>
                 ) : isLast ? (
@@ -54,7 +54,7 @@ const Breadcrumb: FC<ComponentProps> = ({ pathname, ellipsis = 0, className, ...
 
               {!isLast && (
                 <li aria-hidden='true' className='inline-flex items-center text-secondary [&>svg]:h-3.5 [&>svg]:w-3.5'>
-                  <ChevronRight />
+                  <ChevronRight/>
                 </li>
               )}
             </Fragment>

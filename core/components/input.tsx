@@ -5,8 +5,7 @@ import { type FC, type InputHTMLAttributes, type ReactNode } from 'react'
 import { cva, tm, type VariantProps } from '@/helpers/tailwind-merge'
 import { DynamicIcon, type IconName, iconNames } from 'lucide-react/dynamic'
 
-type ComponentProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> &
-  VariantProps<typeof styles> & {
+type ComponentProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & VariantProps<typeof styles> & {
   addon?: string | IconName | ReactNode
   onValidateInput?: () => {}
 }
@@ -21,7 +20,7 @@ const Input: FC<ComponentProps> = ({placeholder = 'placeholder', addon = undefin
         <span
           onClick={onValidateInput}
           className={tm('flex items-center justify-center text-secondary bg-tertiary', size === 'sm' && 'h-8 w-8', size === 'md' && 'h-9 w-9', size === 'lg' && 'h-10 w-10', direction === 'right' && 'cursor-pointer hover:bg-quaternary')}>
-          <DynamicIcon name={addon as IconName} size={size === 'lg' ? 16 : 14} className="text-secondary"/>
+          <DynamicIcon name={addon as IconName} size={size === 'lg' ? 16 : 14} className='text-secondary'/>
         </span>
       )
     }
@@ -50,7 +49,7 @@ const Input: FC<ComponentProps> = ({placeholder = 'placeholder', addon = undefin
 Input.displayName = 'Input'
 
 const styles = cva(
-  ['group overflow-hidden flex items-center bg-primary dark:bg-secondary border-2', '[&>input]:pear [&>input]:h-full [&>input]:w-full [&>input]:outline-none [&>input]:border-0 [&>input]:bg-transparent [&>input]:placeholder:text-tertiary/50 [&>input]:px-2'],
+  ['group overflow-hidden flex items-center bg-primary dark:bg-secondary border-2', '[&>input]:pear [&>input]:h-full [&>input]:w-full [&>input]:outline-none [&>input]:text-primary [&>input]:border-0 [&>input]:bg-transparent [&>input]:placeholder:text-tertiary/50 [&>input]:px-2'],
   {
     variants: {
       variant: {

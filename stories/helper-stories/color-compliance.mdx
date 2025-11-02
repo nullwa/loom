@@ -1,10 +1,10 @@
-import { Meta, Markdown } from '@storybook/addon-docs/blocks'
+import { Meta } from '@storybook/addon-docs/blocks'
 
-<Meta title='helpers/color-accessibility' />
+<Meta title='helpers/color-accessibility'/>
 
 # color-accessibility
 
-A set of utilities for working with colors and ensuring **WCAG-compliant contrast ratios**.  
+A set of utilities for working with colors and ensuring **WCAG-compliant contrast ratios**.
 Includes functions for parsing HEX colors, computing luminance, calculating contrast ratios, and evaluating compliance (AA / AAA).
 
 ## API
@@ -53,10 +53,10 @@ evaluateCompliance(
   foregroundColor: string,
   backgroundColor: string
 ): {
-  contrastRatio: string
-  isAAACompliant: boolean
-  isAACompliant: boolean
-  isLargeTextAACompliant: boolean
+  string
+  boolean
+  boolean
+  boolean
 }
 ```
 
@@ -64,10 +64,10 @@ evaluateCompliance(
 - **`backgroundColor`**: HEX string for background.
 - **Returns**:
 
-  - `contrastRatio`: String (rounded to 1 decimal).
-  - `isAAACompliant`: `true` if ratio ≥ 7.
-  - `isAACompliant`: `true` if ratio ≥ 4.5.
-  - `isLargeTextAACompliant`: `true` if ratio ≥ 3.
+- `contrastRatio`: String (rounded to 1 decimal).
+- `isAAACompliant`: `true` if ratio ≥ 7.
+- `isAACompliant`: `true` if ratio ≥ 4.5.
+- `isLargeTextAACompliant`: `true` if ratio ≥ 3.
 
 ## Examples
 
@@ -118,8 +118,8 @@ console.log(evaluateCompliance('#000000', '#ffffff'))
 - Ratios are between **1 (no contrast)** and **21 (max contrast)**.
 - Recommended compliance thresholds:
 
-  - **AAA**: ≥ 7
-  - **AA (normal text)**: ≥ 4.5
-  - **AA (large text)**: ≥ 3
+- **AAA**: ≥ 7
+- **AA (normal text)**: ≥ 4.5
+- **AA (large text)**: ≥ 3
 
 ✅ Use these utilities to **check accessibility of UI colors** and enforce WCAG contrast rules.

@@ -14,7 +14,7 @@ interface ComponentProps {
   placement?: 'top' | 'right' | 'bottom' | 'left'
 }
 
-const Tooltip: FC<ComponentProps> = ({ title, description, children, arrow = false, delay = 300, placement = 'top' }) => {
+const Tooltip: FC<ComponentProps> = ({title, description, children, arrow = false, delay = 300, placement = 'top'}) => {
   return (
     <TooltipPrimitive.Provider delayDuration={delay}>
       <TooltipPrimitive.Root>
@@ -44,7 +44,7 @@ const Tooltip: FC<ComponentProps> = ({ title, description, children, arrow = fal
             <span className='text-md font-medium text-white'>{title}</span>
             {description && <span className='text-sm text-tooltip-supporting-text'>{description}</span>}
 
-            {arrow && <TooltipPrimitive.Arrow width={10} height={5} className='fill-bg-primary-solid' />}
+            {arrow && <TooltipPrimitive.Arrow width={10} height={5} className='fill-bg-primary-solid'/>}
           </TooltipPrimitive.Content>
         </TooltipPrimitive.Portal>
       </TooltipPrimitive.Root>

@@ -2,23 +2,22 @@
 
 import { type FC, type InputHTMLAttributes } from 'react'
 
-import { tm, cva, type VariantProps } from '@/helpers/tailwind-merge'
+import { cva, tm, type VariantProps } from '@/helpers/tailwind-merge'
 import { Check } from 'lucide-react'
 
-type ComponentProps = InputHTMLAttributes<HTMLInputElement> &
-  VariantProps<typeof styles> & {
-    label?: string
-    hint?: string
-    bordered?: boolean
-  }
+type ComponentProps = InputHTMLAttributes<HTMLInputElement> & VariantProps<typeof styles> & {
+  label?: string
+  hint?: string
+  bordered?: boolean
+}
 
-const Checkbox: FC<ComponentProps> = ({ label, hint, bordered = false, variant = 'brand', disabled = false, className, ...rest }) => {
+const Checkbox: FC<ComponentProps> = ({label, hint, bordered = false, variant = 'brand', disabled = false, className, ...rest}) => {
   return (
     <div className={tm('flex items-center select-none', bordered && 'border border-secondary rounded-xs bg-secondary')}>
       <label htmlFor={`${label}-checking-item`} className={tm('flex items-center gap-3 cursor-pointer py-3 px-4', disabled && 'cursor-not-allowed')}>
         <div className={tm('relative flex items-center justify-center')}>
-          <input id={`${label}-checking-item`} type='checkbox' className={tm(styles({ variant, className }))} disabled={disabled} {...rest} />
-          <Check className={tm('absolute opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none size-3.5', variant === 'default' ? 'text-black' : 'text-white')} />
+          <input id={`${label}-checking-item`} type='checkbox' className={tm(styles({variant, className}))} disabled={disabled} {...rest} />
+          <Check className={tm('absolute opacity-0 peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none size-3.5', variant === 'default' ? 'text-black' : 'text-white')}/>
         </div>
         {label && (
           <div className='flex flex-col gap-1.5 cursor-pointer'>
@@ -42,12 +41,12 @@ const styles = cva(
         default: 'checked:bg-gray-300 checked:border-gray-500',
         secondary: 'checked:bg-gray-600 checked:border-gray-800',
         error: 'checked:bg-error-solid checked:border-error-800',
-        success: 'checked:bg-success-solid checked:border-success-800',
-      },
+        success: 'checked:bg-success-solid checked:border-success-800'
+      }
     },
     defaultVariants: {
-      variant: 'brand',
-    },
+      variant: 'brand'
+    }
   }
 )
 

@@ -27,13 +27,13 @@ const Switch: FC<ComponentProps> = ({label, hint, bordered = false, variant = 'b
     <div className={tm('flex items-center select-none', bordered && 'border border-secondary rounded-xs bg-secondary')}>
       <label className={tm('flex items-center gap-3 cursor-pointer py-3 px-4', disabled && 'cursor-not-allowed')}>
         <SwitchPrimitive.Root className={tm(styles({variant, radius}))} disabled={disabled} checked={checked} onCheckedChange={handleCheckedChange}>
-          <SwitchPrimitive.Thumb className="block w-4.5 h-4.5 bg-primary border border-secondary shadow-xs transition-transform duration-200 translate-x-[2px] data-[state=checked]:translate-x-[22px]"/>
+          <SwitchPrimitive.Thumb className='block w-4.5 h-4.5 bg-primary border border-secondary shadow-xs transition-transform duration-200 translate-x-[2px] data-[state=checked]:translate-x-[22px]'/>
         </SwitchPrimitive.Root>
 
         {label && (
-          <div className="flex flex-col gap-1.5 cursor-pointer">
-            <p className="text-primary first-letter:uppercase font-medium">{label}</p>
-            {hint && <p className="text-tertiary first-letter:uppercase">{hint}</p>}
+          <div className='flex flex-col gap-1.5 cursor-pointer'>
+            <p className='text-primary first-letter:uppercase font-medium'>{label}</p>
+            {hint && <p className='text-tertiary first-letter:uppercase'>{hint}</p>}
           </div>
         )}
       </label>
