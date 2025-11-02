@@ -13,6 +13,7 @@ const config: StorybookConfig = {
   managerHead: (head) => `
     ${head}
     <link rel="icon" type="image/x-icon" href="/loom-ui-blue.svg" />
+    <link rel="stylesheet" href="https://1.www.s81c.com/common/carbon/plex/sans.css"/>
   `,
   docs: {
     docsMode: true,

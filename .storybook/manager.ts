@@ -10,7 +10,9 @@ addons.setConfig({
     brandUrl: 'https://github.com/nullwa/loom',
     brandImage: '/loom-ui-full-white.svg',
     appBorderRadius: 2,
-    inputBorderRadius: 2
+    inputBorderRadius: 2,
+    fontBase: '\'IBM Plex Sans\', sans-serif',
+    fontCode: '\'IBM Plex Mono\', monospace'
   }),
   previewTabs: {
     canvas: 'Playground'
