@@ -12,20 +12,20 @@ const meta = {
       options: ['online', 'offline', 'busy', 'away'],
       description: 'User status to display',
       table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: 'online' },
-      },
+        type: {summary: 'string'},
+        defaultValue: {summary: 'online'}
+      }
     },
     size: {
       control: 'select',
       options: ['xs', 'sm', 'md', 'lg', 'xl'],
       description: 'Size of the indicator',
       table: {
-        type: { summary: 'string' },
-        defaultValue: { summary: 'md' },
-      },
-    },
-  },
+        type: {summary: 'string'},
+        defaultValue: {summary: 'md'}
+      }
+    }
+  }
 } satisfies Meta<typeof Indicator>
 
 export default meta
@@ -41,11 +41,11 @@ export const Playground: Story = {
     <div className='flex flex-wrap gap-6 items-center'>
       {statuses.map((state) => (
         <div key={state} className='relative flex flex-col items-center gap-2'>
-          <Indicator status={state} size='md' />
+          <Indicator status={state} size='md'/>
         </div>
       ))}
     </div>
-  ),
+  )
 }
 
 export const PlaygroundOnline: Story = {
@@ -54,9 +54,9 @@ export const PlaygroundOnline: Story = {
     <div className='flex flex-wrap gap-6 items-center'>
       {sizes.map((size) => (
         <div key={size} className=' relative flex flex-col items-center gap-2'>
-          <Indicator status='online' size={size} />
+          <Indicator status='online' size={size}/>
         </div>
       ))}
     </div>
-  ),
+  )
 }
