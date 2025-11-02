@@ -15,7 +15,6 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@storybook/addon-docs": "^10.0.2",
-    "@storybook/addon-themes": "^10.0.2",
     "@storybook/nextjs": "^10.0.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
@@ -24,13 +23,13 @@
     "class-variance-authority": "^0.7.1",
     "eslint": "^9",
     "eslint-config-next": "15.5.2",
+    "eslint-plugin-storybook": "10.0.2",
     "lucide-react": "^0.543.0",
     "motion": "^12.23.24",
     "radix-ui": "^1.4.3",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5",
-    "eslint-plugin-storybook": "10.0.2"
+    "typescript": "^5"
   }
 }

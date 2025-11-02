@@ -6,20 +6,21 @@ import { type Preview } from '@storybook/nextjs'
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: '^on.*' },
+    layout: 'fullscreen',
+    actions: {argTypesRegex: '^on.*'},
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/i,
-      },
+        date: /Date$/i
+      }
     },
     options: {
       storySort: {
         method: 'alphabetical',
-        order: ['Introduction', ['Components', 'Shared', 'Utils', 'Helpers', 'Changelog']],
-      },
+        order: ['Introduction', ['Components', 'Shared', 'Utils', 'Helpers', 'Changelog']]
+      }
     },
-    backgrounds: null,
+    backgrounds: null
   },
   globalTypes: {
     theme: {
@@ -28,12 +29,12 @@ const preview: Preview = {
       toolbar: {
         icon: 'paintbrush',
         items: [
-          { value: 'light', icon: 'sun', title: 'Light mode' },
-          { value: 'dark', icon: 'moon', title: 'Dark mode' },
+          {value: 'light', icon: 'sun', title: 'Light mode'},
+          {value: 'dark', icon: 'moon', title: 'Dark mode'}
         ],
         showName: false,
-        dynamicTitle: false,
-      },
+        dynamicTitle: false
+      }
     },
     RTL: {
       name: 'RTL',
@@ -43,16 +44,16 @@ const preview: Preview = {
         icon: 'transfer',
         dynamicTitle: true,
         items: [
-          { value: 'ltr', right: '⇒', title: 'LTR' },
-          { value: 'rtl', right: '⇐', title: 'RTL' },
-        ],
-      },
-    },
+          {value: 'ltr', right: '⇒', title: 'LTR'},
+          {value: 'rtl', right: '⇐', title: 'RTL'}
+        ]
+      }
+    }
   },
   initialGlobals: {
-    theme: 'light',
+    theme: 'light'
   },
-  decorators: [Wrapper],
+  decorators: [Wrapper]
 }
 
 export default preview
