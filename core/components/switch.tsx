@@ -11,7 +11,7 @@ type ComponentProps = VariantProps<typeof styles> & {
   bordered?: boolean
   checked?: boolean
   onCheckedChange?: (checked: boolean) => void
-  direction: 'trailing' | 'leading'
+  direction?: 'trailing' | 'leading'
 }
 
 const Switch: FC<ComponentProps> = ({label, hint, bordered = false, variant = 'brand', radius = 'squared', disabled = false, direction = 'leading', checked: controlledChecked, onCheckedChange}) => {

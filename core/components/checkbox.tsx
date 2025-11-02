@@ -9,7 +9,7 @@ type ComponentProps = InputHTMLAttributes<HTMLInputElement> & VariantProps<typeo
   label?: string
   hint?: string
   bordered?: boolean
-  direction: 'trailing' | 'leading'
+  direction?: 'trailing' | 'leading'
 }
 
 const Checkbox: FC<ComponentProps> = ({label, hint, bordered = false, variant = 'brand', disabled = false, direction = 'leading', className, ...rest}) => {
