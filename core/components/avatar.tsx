@@ -11,12 +11,10 @@ type ComponentProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof style
   src?: string
   fallback: string
   status?: 'online' | 'offline' | 'busy' | 'away'
-  verfied?: boolean
+  verified?: boolean
 }
 
-const Avatar: FC<ComponentProps> = ({src, fallback, status = null, verfied = false, size = 'sm', radius = 'rounded', className, ...rest}) => {
-  const isStatusSet: boolean = status != null && status != undefined
-
+const Avatar: FC<ComponentProps> = ({src, fallback, status = null, verified = false, size = 'sm', radius = 'rounded', className, ...rest}) => {
   return (
     <Primitive.Root data-slot='avatar' className={tm('select-none relative')} {...rest}>
       <div className={tm(styles({size, radius, className}))}>
@@ -26,7 +24,8 @@ const Avatar: FC<ComponentProps> = ({src, fallback, status = null, verfied = fal
         </Primitive.Fallback>
       </div>
 
-      {isStatusSet ? <Indicator status={status}/> : verfied && <VerifiedTick position={isStatusSet ? 'left' : 'right'}/>}
+      {status && <Indicator size={size} status={status}/>}
+      {verified && <VerifiedTick size={size} position={status != null ? 'left' : 'right'}/>}
     </Primitive.Root>
   )
 }

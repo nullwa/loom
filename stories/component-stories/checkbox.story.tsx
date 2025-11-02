@@ -1,23 +1,30 @@
 import type { Meta, StoryObj } from '@storybook/react'
-
 import { Checkbox } from '@/core/components/checkbox'
 
+import Template from '@/templates/checkbox.template.mdx'
+
+// Storybook metadata
 const meta: Meta<typeof Checkbox> = {
-  title: 'Components/Checkbox',
+  title: 'core/Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      page: Template
+    }
+  },
   args: {
     label: 'Accept terms',
-    hint: 'You must accept before continuing',
+    hint: 'You must accept before continuing'
   },
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'brand', 'secondary', 'error', 'success'],
+      options: ['default', 'brand', 'secondary', 'error', 'success']
     },
-    bordered: { control: 'boolean' },
-    disabled: { control: 'boolean' },
-  },
+    bordered: {control: 'boolean'},
+    disabled: {control: 'boolean'}
+  }
 }
 export default meta
 
@@ -29,6 +36,6 @@ export const Default: Story = {
     label: 'Accept terms',
     hint: 'You must accept before continuing',
     bordered: false,
-    disabled: false,
-  },
+    disabled: false
+  }
 }

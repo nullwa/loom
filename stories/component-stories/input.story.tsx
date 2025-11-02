@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
 import { Input } from '@/core/components/input'
-
 import { iconNames } from 'lucide-react/dynamic'
 
+import Template from '@/templates/input.template.mdx'
+
+// Storybook metadata
 const meta = {
-  title: 'components/Input',
+  title: 'core/Input',
   component: Input,
   tags: ['autodocs'],
   parameters: {
     docs: {
-      description: {
-        component: 'Composant Input de base pour les formulaires.'
-      }
+      page: Template
     }
   },
   argTypes: {

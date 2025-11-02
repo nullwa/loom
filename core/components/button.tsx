@@ -19,7 +19,7 @@ const Button: FC<ComponentProps> = ({children, loading = false, icon = undefined
   return (
     <Slot.Root data-slot='button' data-loading={loading || undefined} className={tm(styles({variant, isFancy, size, radius, className}), !hasText && 'px-0')} {...rest}>
       <div>
-        <div className={tm('flex items-center justify-between gap-1', iconPosition === 'trailing' && 'flex-row-reverse')}>
+        <div className={tm('flex items-center justify-between gap-2', iconPosition === 'trailing' && 'flex-row-reverse')}>
           {!loading ? icon && <DynamicIcon name={icon} size={iconSizeMap[size ?? 'sm']}/> : <DynamicIcon name='loader' data-icon='loading' size={iconSizeMap[size ?? 'sm']} className='animate-spin opacity-85'/>}
           {hasText && <span className='first-letter:uppercase'>{children}</span>}
         </div>
@@ -44,7 +44,11 @@ const styles = cva(
         success: 'bg-success-solid text-white shadow-xs-skeumorphic ring-1 ring-transparent ring-inset hover:bg-success-700 dark:hover:bg-success-500 data-loading:bg-success-700 dark:data-loading:bg-success-500',
         warning: 'bg-warning-solid text-white shadow-xs-skeumorphic ring-1 ring-transparent ring-inset hover:bg-warning-700 dark:hover:bg-warning-500 data-loading:bg-warning-700 dark:data-loading:bg-warning-500',
         brand: 'bg-brand-solid text-white shadow-xs-skeumorphic ring-1 ring-transparent ring-inset hover:bg-brand-solid_hover data-loading:bg-brand-solid_hover',
-        ghost: 'bg-primary text-primary ring-1 ring-transparent ring-inset hover:bg-secondary_hover'
+        ghost: 'bg-primary text-primary ring-1 ring-transparent ring-inset hover:bg-secondary_hover',
+        'outline-brand': 'bg-brand-primary text-brand-primary shadow-xs-skeumorphic',
+        'outline-error': 'bg-error-primary text-error-primary shadow-xs-skeumorphic',
+        'outline-success': 'bg-success-primary text-success-primary shadow-xs-skeumorphic',
+        'outline-warning': 'bg-warning-primary text-warning-primary shadow-xs-skeumorphic'
       },
       isFancy: {
         true: 'before:absolute before:inset-px before:border before:border-white/50 before:mask-b-from-0%',

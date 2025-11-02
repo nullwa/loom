@@ -1,47 +1,47 @@
 import type { Meta, StoryObj } from '@storybook/nextjs'
 import { Avatar } from '@/core/components/avatar'
 
+import Template from '@/templates/avatar.template.mdx'
+
+// Storybook metadata
 const meta = {
-  title: 'components/Avatar',
+  title: 'core/Avatar',
   component: Avatar,
   tags: ['autodocs'],
   parameters: {
     docs: {
-      description: {
-        component: 'Free and open-source React avatar components built for modern applications and websites. These avatars are styled with Tailwind CSS.',
-      },
-    },
+      page: Template
+    }
   },
-
   argTypes: {
     fallback: {
-      control: { type: 'text' },
-      description: 'The fallback string where image not valid.',
+      control: {type: 'text'},
+      description: 'The fallback string where image not valid.'
     },
     size: {
-      control: { type: 'select' },
+      control: {type: 'select'},
       options: ['sm', 'md', 'lg'],
-      description: 'The size of the avatar element.',
+      description: 'The size of the avatar element.'
     },
     radius: {
-      control: { type: 'radio' },
+      control: {type: 'radio'},
       options: ['rounded', 'squared'],
-      description: 'The border radius of the avatar element.',
+      description: 'The border radius of the avatar element.'
     },
     src: {
-      control: { type: 'text' },
-      description: 'the source image.',
+      control: {type: 'text'},
+      description: 'the source image.'
     },
     status: {
-      control: { type: 'select' },
+      control: {type: 'select'},
       options: ['online', 'offline', 'busy', 'away'],
-      description: 'status of the user if enabled.',
+      description: 'status of the user if enabled.'
     },
-    verfied: {
-      control: { type: 'boolean' },
-      description: 'the user shown is a verified user or not.',
-    },
-  },
+    verified: {
+      control: {type: 'boolean'},
+      description: 'the user shown is a verified user or not.'
+    }
+  }
 } satisfies Meta<typeof Avatar>
 
 export default meta
@@ -54,6 +54,6 @@ export const Default: Story = {
     size: 'md',
     radius: 'rounded',
     status: undefined,
-    verfied: false,
-  },
+    verified: false
+  }
 }

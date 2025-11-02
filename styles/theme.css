@@ -1151,7 +1151,7 @@
     /* BACKGROUND COLORS */
     --color-bg-primary: var(--color-gray-950);
     --color-bg-tertiary: var(--color-gray-800);
-    --color-bg-brand-primary: var(--color-brand-500);
+    --color-bg-brand-primary: var(--color-brand-950);
     --color-bg-error-secondary: var(--color-error-600);
     --color-bg-warning-primary: var(--color-warning-950);
     --color-bg-warning-secondary: var(--color-warning-600);

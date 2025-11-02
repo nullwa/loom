@@ -1,11 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react'
-
 import { Switch } from '@/core/components/switch'
 
+import Template from '@/templates/switch.template.mdx'
+
+// Storybook metadata
 const meta = {
-  title: 'Components/Switch',
+  title: 'core/Switch',
   component: Switch,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      page: Template
+    }
+  },
   args: {
     label: 'Accept terms',
     hint: 'You must accept before continuing'
