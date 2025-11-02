@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 
 import Wrapper from './components/wrapper'
+import Container from './components/container'
 
 import { type Preview } from '@storybook/nextjs'
 
@@ -9,6 +10,7 @@ const preview: Preview = {
     layout: 'fullscreen',
     actions: {argTypesRegex: '^on.*'},
     controls: {
+      expended: true,
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i
@@ -19,6 +21,10 @@ const preview: Preview = {
         method: 'alphabetical',
         order: ['Introduction', ['Components', 'Shared', 'Utils', 'Helpers', 'Changelog']]
       }
+    },
+    docs: {
+      autodocs: true,
+      container: Container
     },
     backgrounds: null
   },

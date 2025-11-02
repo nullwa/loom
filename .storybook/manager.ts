@@ -8,6 +8,12 @@ addons.setConfig({
     base: 'dark',
     brandTitle: 'Loom',
     brandUrl: 'https://github.com/nullwa/loom',
-    brandImage: '/loom-ui-full-white.svg'
-  })
+    brandImage: '/loom-ui-full-white.svg',
+    appBorderRadius: 2,
+    inputBorderRadius: 2
+  }),
+  previewTabs: {
+    canvas: 'Playground'
+  },
+  navSize: 250
 })

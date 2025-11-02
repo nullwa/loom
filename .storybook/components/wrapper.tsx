@@ -12,7 +12,7 @@ const Wrapper = (Story, context: StoryContext) => {
   }, [theme])
 
   return (
-    <div className={`prose min-h-56 p-4 flex items-center justify-center ${theme === 'dark' && 'dark-mode'} bg-primary`}>
+    <div className={`prose min-h-64 p-4 flex items-center justify-center ${theme === 'dark' && 'dark-mode'} bg-primary`}>
       <Story/>
     </div>
   )
