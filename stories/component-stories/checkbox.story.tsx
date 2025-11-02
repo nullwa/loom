@@ -23,7 +23,11 @@ const meta: Meta<typeof Checkbox> = {
       options: ['default', 'brand', 'secondary', 'error', 'success']
     },
     bordered: {control: 'boolean'},
-    disabled: {control: 'boolean'}
+    disabled: {control: 'boolean'},
+    direction: {
+      control: {type: 'radio'},
+      options: ['leading', 'trailing']
+    }
   }
 }
 export default meta
@@ -36,6 +40,7 @@ export const Default: Story = {
     label: 'Accept terms',
     hint: 'You must accept before continuing',
     bordered: false,
-    disabled: false
+    disabled: false,
+    direction: 'leading'
   }
 }

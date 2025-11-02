@@ -27,6 +27,10 @@ const meta = {
     radius: {
       control: {type: 'radio'},
       options: ['squared', 'pilled']
+    },
+    direction: {
+      control: {type: 'radio'},
+      options: ['leading', 'trailing']
     }
   }
 } satisfies Meta<typeof Switch>
@@ -41,6 +45,7 @@ export const Default: Story = {
     hint: 'You must accept before continuing',
     bordered: false,
     disabled: false,
-    radius: 'squared'
+    radius: 'squared',
+    direction: 'leading'
   }
 }
