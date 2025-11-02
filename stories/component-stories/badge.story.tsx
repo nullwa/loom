@@ -42,7 +42,7 @@ const meta: Meta<typeof Badge> = {
     },
     variant: {
       control: 'select',
-      options: ['primary', 'outline', 'error', 'success', 'warning', 'brand', 'ghost']
+      options: ['primary', 'outline', 'outline-brand', 'error', 'outline-error', 'success', 'outline-success', 'warning', 'outline-warning', 'brand', 'ghost']
     },
     radius: {
       control: 'radio',

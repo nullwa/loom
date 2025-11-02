@@ -47,7 +47,11 @@ const styles = cva('select-none flex items-center gap-1 px-2 py-0.5 font-medium 
       error: 'bg-error-solid text-white border-error-700',
       success: 'bg-success-solid text-white border-success-700',
       warning: 'bg-warning-solid text-white border-warning-700',
-      brand: 'bg-brand-solid text-white border-brand-solid_hover'
+      brand: 'bg-brand-solid text-white border-brand-solid_hover',
+      'outline-brand': 'bg-brand-primary text-brand-primary border-brand-solid',
+      'outline-error': 'bg-error-primary text-error-primary border-error-solid',
+      'outline-success': 'bg-success-primary text-success-primary border-success-600',
+      'outline-warning': 'bg-warning-primary text-warning-primary border-warning-600'
     },
     radius: {
       pilled: 'rounded-full',
